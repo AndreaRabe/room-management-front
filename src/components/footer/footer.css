@@ -1,0 +1,219 @@
+/* html, body {
+    height: 100%;
+    margin: 0;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+} */
+
+/*style footer*/
+.footer {
+    background: linear-gradient(
+      145deg,
+      rgba(34, 167, 93, 0.2) 15%,
+      rgba(226, 6, 19, 0.2) 60%,
+      rgba(34, 120, 212, 0.2) 90%
+    ) !important;
+    border-radius: 43px;
+    height: 313px; /*j'ai modifier ceci de 313 a 250 du coup modifie la positionnemet de chaque element du footer*/
+    width: 1315px;
+    margin-top: auto;  /* Cette propriété pousse le footer en bas de la page */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Outfit-Light", Helvetica !important;
+    color: #ffffff;
+    background: transparent;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+
+/* About section */
+.about {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+  }
+  
+.about span {
+    color: #ffffffb2;
+    font-family: "Outfit-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 144px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 48px;
+    background: transparent;
+    cursor: default;
+  }
+  
+.about div {
+    color: #ffffff;
+    font-family: "Outfit-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 32px;
+    letter-spacing: 0;
+    line-height: 1.6;
+    position: absolute;
+    text-align: center;
+    top: 128px;
+    width: 345px;
+    background: transparent;
+    cursor: default;
+}
+/***************                                   **************/
+
+/* WebSite section */
+.website{
+    text-align: center;
+    background: transparent;
+}
+
+.website-span{
+    color: #ffffffb2;
+    font-family: "Outfit-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 603px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 48px;
+    background: transparent;
+    cursor: default;
+}
+
+.website-div{
+    color: #ffffff;
+    font-family: "Outfit-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 490px;
+    letter-spacing: 0;
+    line-height: 1.6;
+    position: absolute;
+    text-align: center;
+    top: 131px;
+    width: 345px;
+    background: transparent;
+    cursor: default;
+}
+
+.website-a{
+    height: 47px ;
+    left: 585px ;
+    position: absolute ;
+    top: 200px ;
+    width: 145px ;
+    background: transparent;
+    text-decoration: none;
+}
+
+/***************                                   **************/
+
+/* Social Media section */
+.media{
+    background: transparent;
+}
+
+.media-span{
+    color: #ffffffb2;
+    font-family: "Outfit-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 979px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 48px;
+    background: transparent;
+    cursor: default;
+}
+
+.email-input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.email-input:focus::placeholder {
+    opacity: 0;
+}
+
+.email-input{
+    background-color: rgba(255, 255, 255, 0.425);
+    border: none;
+    outline: none;
+    border-radius: 52px;
+    height: 37px;
+    left: 920px;
+    position: absolute;
+    top: 123px;
+    width: 190px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    color: #ffffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: transparent;
+    height: 110px;
+    left: 1152px;
+    position: absolute;
+    top: 126px;
+    width: 109px;
+}
+
+.social-media a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+}
+
+.social-media img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;    
+    box-shadow: 0px 10px 25px #ffffff46;
+    background: transparent;
+    border-radius: 6px;
+}
+
+.social-media span {
+    font-family: "Outfit-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    background: transparent;
+}
+/***************                                   **************/
