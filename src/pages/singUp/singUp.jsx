@@ -9,7 +9,7 @@ export function SingUp() {
             </header>
             <div className="pg-singup-body">
                 <div className="pg-singup-txt-img">
-                    <span>Bon retour parmis-nous !</span>
+                    <span>Heureux de vous revoir !</span>
                     <img src={SinUpImg} alt="Conference table" />
                 </div>
                 <SingUpForm />
@@ -33,7 +33,7 @@ function SingUpForm(){
                     </div>
                 </form>
                 <div className="form-singup-div-3">
-                    Vous n'avez pas de compte ?<b className="form-singup-div-3-b">Créer un compte.</b>
+                    Vous n'avez pas de compte ?<b className="form-singup-div-3-b">Créer un compte</b>
                 </div>
             </div>
         </div>
