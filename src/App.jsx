@@ -9,7 +9,6 @@ import { RoomList } from './pages/room_list/room_list';
 function App() {
   return (
     <div className='app'>
-      <RoomList />
     </div>
 
   );

@@ -45,14 +45,46 @@
 }
 
 .list-room-information-table{
-    display: flex;
-    align-items: center;
     background: transparent;
     width: 100%;
 }
 
 .list-room-information-table table{
+    margin-left: 45px;
+    margin-right: 45px;
     width: 90%;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #ffffff28;
+    color: #ffffffd4;
+    font-family: "Outfit-Light", Helvetica;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 30px;
+    cursor: default;
+
+}
+
+.list-room-information-table #customers {
+    font-family: "Outfit-Light", Helvetica;
+    border-collapse: collapse;
+    width: 90%;
+    background: transparent;
+  }
+  
+.list-room-information-table #customers td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    background: transparent;
+}
+
+.list-room-information-table #customers tr, .list-room-information-table #customers ul, .list-room-information-table #customers li{
+    background: transparent;
+}
+
+.list-room-information-btn{
+    background: transparent;
+    margin-top: 10px;
+    width: fit-content;
+    margin-left: 850px;
 }
