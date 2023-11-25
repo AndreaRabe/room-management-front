@@ -138,7 +138,7 @@
 /* style acount button*/ 
 .btn-account{
     margin-top: 10px;
-    margin-right: 160px;
+    margin-right: 100px;
     height: 40px;
     width: 130px;
     background-color: #22a75e52;
@@ -147,7 +147,7 @@
     position: absolute;
     right: 0;
     cursor: pointer;
-  }
+}
 
 .btn-account-span{
     background-color: transparent;
@@ -165,18 +165,19 @@
     width: 70%;
 }
 
-.btn-singUp:hover{
+.btn-account:hover{
     background: #22a75e94;
 }
 
 /* style logOut button */
 .btn-logout img{
     right: 0;
-    margin-top: 10px;
     margin-right: 20px;
     position: absolute;
     cursor: pointer;
+    margin-top: 5px;
 }
+
 
 /* style seeMore-in button*/ 
 .btn-seeMore{

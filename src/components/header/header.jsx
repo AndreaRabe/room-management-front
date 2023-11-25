@@ -1,6 +1,6 @@
 import logoOmnis from '../../assets/images/logo-omnis.png';
 import './header.css';
-import { SingInButton, SingUpButton } from '../button/button';
+import { SingInButton, SingUpButton, AccountButton, LogOut } from '../button/button';
 
 const navbarInformation = ["Acceuil", "Reserver Salle", "Liste Reservation"]
 
@@ -15,6 +15,11 @@ export function Header({header}){
             <>
                 <SingInButton />
                 <SingUpButton />
+            </>}
+            {!header &&
+            <>
+                <AccountButton />
+                <LogOut />
             </>}
         </header>
     )
