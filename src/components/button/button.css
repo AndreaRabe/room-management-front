@@ -209,3 +209,36 @@
 .btn-seeMore:hover{
     background: rgb(40, 211, 117);
 }
+
+/* style reservation-in button*/ 
+.btn-reservation{
+    height: 40px;
+    width: 120px;
+    background-color: #22a75d;
+    border: #22a75d;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #22a75e50;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-reservation-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-reservation:hover{
+    background: rgb(40, 211, 117);
+}
+

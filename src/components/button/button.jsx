@@ -56,3 +56,11 @@ export function SeeMore(){
         </button>
     )
 }
+
+export function Reservation(){
+    return(
+        <button className="btn-reservation" >
+            <span className="btn-reservation-span">Reserver</span>
+        </button>
+    )
+}

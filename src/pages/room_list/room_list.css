@@ -1,0 +1,58 @@
+.room-list{
+
+}
+
+/* style list-room-information */
+.list-room-information{
+    margin-top: 10px;
+    height: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.list-room-information-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 80%;
+    padding: 20px;
+    background: #ffffff0f;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.list-room-information-img{
+    background: transparent;
+}
+
+.list-room-information-img img{
+    width: 450px;
+    height: 300px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.list-room-information-img img:first-child{
+    margin-right: 30px;
+}
+
+.list-room-information-table{
+    display: flex;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+}
+
+.list-room-information-table table{
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
