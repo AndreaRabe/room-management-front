@@ -26,7 +26,7 @@ export function SingIn(){
 function SingInForm(){
     const [isAdmin, setIsAdmin] = useState(false)
 
-    function handleTabClick(value){
+    function handleTabClick(){
         setIsAdmin(!isAdmin)
     }
     return(

@@ -48,3 +48,11 @@ export function LogOut() {
 
     )
 }
+
+export function SeeMore(){
+    return(
+        <button className="btn-seeMore" >
+            <span className="btn-seeMore-span">Voir plus</span>
+        </button>
+    )
+}

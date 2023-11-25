@@ -1,0 +1,108 @@
+.home *{
+
+}
+
+/* style home-body */
+.home-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-text{
+    height: auto;
+    width: 1050px;
+    margin-left: -100px;
+    margin-top: 40px;
+}
+
+.home-body-span-1{
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 70px;
+}
+
+.home-body-span-2{
+    margin-top: 30px;
+    color: #ffffffd4;
+    font-family: "Outfit-Light", Helvetica;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 30px;
+    max-width: 900px;
+}
+
+/* style home-list-room */
+.home-list-Room{
+    margin-top: 100px;
+    height: auto;
+    width: 90%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-list-Room-item{
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.home-list-Room-description{
+    height: fit-content;
+    width: 400px;
+    align-self: center;
+    padding: 20px;
+    background: #ffffff0f;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 20px;
+}
+
+.home-list-Room-title{
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 50px;
+    font-weight: 700;
+    background: transparent;
+}
+
+.home-list-Room-text{
+    color: #ffffffd4;
+    font-family: "Outfit-Light", Helvetica;
+    font-size: 16px;
+    font-weight: 300;
+    left: 34px;
+    letter-spacing: 0;
+    line-height: 30px;
+    width: 400px;
+    height: auto;
+    background: transparent;
+    margin-top: 10px;
+}
+
+.home-list-Room-text b{
+    background: transparent;
+}
+
+.home-list-Room-btn{
+    background: transparent;
+    margin-top: 10px;
+    width: fit-content;
+    margin-left: 275px;
+}
+
+.home-list-Room-image{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 150px;
+}
+
+.home-list-Room-image img{
+    width: 450px;
+    height: 300px;
+    border-radius: 23px;
+}
