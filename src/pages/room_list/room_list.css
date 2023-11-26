@@ -76,10 +76,12 @@
     border: 2px solid #ddd;
     padding: 8px;
     background: transparent;
+    font-family: "Outfit-Light", Helvetica;
 }
 
 .list-room-information-table #customers tr, .list-room-information-table #customers ul, .list-room-information-table #customers li{
     background: transparent;
+    font-family: "Outfit-Light", Helvetica;
 }
 
 .list-room-information-btn{

@@ -1,0 +1,89 @@
+/* style user-list-table*/
+.user-list-table-form{
+    margin-left: -970px;
+}
+
+
+.user-list-table input{
+    background: #ffffff0f;;
+    outline: none;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 20px;
+    width: 220px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 20px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.user-list-table input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.user-list-table input:focus::placeholder {
+    opacity: 0;
+}
+
+
+.user-list-table-form button {
+    cursor: pointer;
+    background: transparent;
+    background: none;
+    border: none;
+    margin-left: -30px; /* Ajusté la marge pour chevaucher légèrement l'image */
+}
+
+.user-list-table-form img {
+    background: transparent;
+    height: 15px;
+}
+
+
+/* style user-list-table */
+.user-list-table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.user-list-table table {
+    border-collapse: collapse;
+    width: 90%;
+    box-shadow: 0 4px 8px #ffffff28;
+    color: #ffffffd4;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.user-list-table  th, .user-list-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.user-list-table  th {
+    background-color: #22a75e52;
+    font-family: "Outfit-Light", Helvetica;
+  }
+
+.user-list-table input[type="text"] {
+    padding: 5px;
+    font-family: "Outfit-Light", Helvetica;
+}

@@ -1,5 +1,7 @@
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
+import { DeleteButton } from "../../components/button/button";
+import LoupeImg from "../../assets/images/loupe.png" 
 import './user_list.css'
 
 const users = [
@@ -99,7 +101,10 @@ export function UserList(){
 function UserListTable(){
     return(
         <div className="user-list-table">
-            <input type="text" placeholder="Rechercher"></input>
+            <form action="" className="user-list-table-form">
+              <input type="text" placeholder="Rechercher..."></input>
+              <button><img src={LoupeImg} alt="Loupe" /></button>
+            </form>
             <table>
                 <thead>
                     <tr>
@@ -122,7 +127,11 @@ function UserListTable(){
                             <td>{item.telephone}</td>
                             <td>{item.entreprise}</td>
                             <td>{item.departement}</td>
-                            <td><button onclick="deleteRow(this)">Supprimer</button></td>
+                            <td>
+                              <div>
+                                <DeleteButton />
+                              </div>
+                            </td>
                         </tr>
                     )}
                 </tbody>

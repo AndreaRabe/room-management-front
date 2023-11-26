@@ -64,3 +64,11 @@ export function Reservation(){
         </button>
     )
 }
+
+export function DeleteButton(){
+    return(
+        <button className="btn-delete" >
+            <span className="btn-delete-span">Supprimer</span>
+        </button>
+    )
+}
