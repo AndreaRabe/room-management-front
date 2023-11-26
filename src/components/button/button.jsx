@@ -1,5 +1,7 @@
 import './button.css'
 import logOut from "../../assets/images/interface-logout.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash, faEye } from '@fortawesome/free-solid-svg-icons';
 export function SingInButton(){
     return(
         <button className="btn-singIn" >
@@ -68,7 +70,24 @@ export function Reservation(){
 export function DeleteButton(){
     return(
         <button className="btn-delete" >
-            <span className="btn-delete-span">Supprimer</span>
+            <span className="btn-delete-span"> <FontAwesomeIcon icon={faTrash} /> </span>
         </button>
     )
 }
+
+export function EditButton(){
+    return(
+        <button className="btn-edit" >
+            <span className="btn-edit-span">  <FontAwesomeIcon icon={faEdit} /></span>
+        </button>
+    )
+}
+
+export function ViewButton(){
+    return(
+        <button className="btn-view" >
+            <span className="btn-view-span">  <FontAwesomeIcon icon={faEye} /></span>
+        </button>
+    )
+}
+

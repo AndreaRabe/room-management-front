@@ -1,0 +1,318 @@
+/* input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+} */
+
+/* style reserve-room */
+.reserve-room{
+    height: 90%;
+    width: auto;
+}
+
+.reserve-room-body{
+    display: flex;
+    flex-direction: row;
+    padding: 20.5px;
+}
+
+.reserve-room-txt-img{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+.reserve-room-txt-img span{
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 80px;
+    cursor: default;
+    margin-left: 35px;
+    margin-top: -15px;
+}
+
+.reserve-room-txt-img img{
+    margin-top: 10px;
+    width: 80%;
+    height: auto;
+}
+
+/* style form-reserve-room */
+.form-reserve-room{
+    background: #ffffff0f;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 20px;
+    height: fit-content;
+    overflow: hidden;
+    width: 600px;
+    margin-left: 100px;
+}
+
+.form-reserve-room-div-1{
+    background: transparent;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-reserve-room-span{
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+    background: transparent;
+    cursor: default;
+    margin-left: -275px;
+}
+
+.form-reserve-room-info-div-2{
+    background: #ffffff0f;
+    margin-top: 50px;
+}
+
+.form-reserve-room-info-div-4{
+    background: transparent;
+    margin-top: 25px;
+}
+
+.form-reserve-room-info-input-group-label{
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    background: transparent;
+}
+
+/* style form-reserve-room-info-input-group-1 */
+.form-reserve-room-info-input-group-1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    background: transparent;
+}
+
+.form-reserve-room-info-input-group-1 div{
+    background: transparent;
+}
+
+.form-reserve-room-info-input-group-1 div:first-child{
+    margin-left: 10px;
+}
+
+.form-reserve-room-info-input-group-1 div:last-child{
+    margin-left: 90px;
+}
+
+.form-reserve-room-info-input-group-1 div:first-child input{
+    width: 170px;
+}
+
+.form-reserve-room-info-input-group-1 div:last-child input{
+    width: 50px;
+}
+
+.form-reserve-room-info-input-group-1 input{
+    background: transparent;
+    outline: none;
+    border-color: gray;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 34px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: gray;
+}
+
+/* style form-reserve-room-info-input-group-2 */
+.form-reserve-room-info-input-group-2{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    background: transparent;
+}
+
+.form-reserve-room-info-input-group-2 div{
+    background: transparent;
+}
+
+.form-reserve-room-info-input-group-2 div:first-child{
+    margin-left: 30px;
+}
+
+.form-reserve-room-info-input-group-2 div:last-child{
+    margin-left: 68px;
+}
+
+.form-reserve-room-info-input-group-2 div:last-child input{
+    width: 50px;
+}
+
+.form-reserve-room-info-input-group-2 input{
+    background: #ffffff;
+    outline: none;
+    border-color: #000000;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 34px;
+    width: 170px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #000000;
+
+}
+
+
+
+/* style form-reserve-room-info-input-group-3 */
+.form-reserve-room-info-input-group-3{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    background: transparent;
+}
+
+.form-reserve-room-info-input-group-3 div{
+    background: transparent;
+}
+
+.form-reserve-room-info-input-group-3 div:first-child{
+    margin-left: 20px;
+}
+
+.form-reserve-room-info-input-group-3 div:last-child{
+    margin-left: 64px;
+}
+
+.form-reserve-room-info-input-group-3 input{
+    background: #ffffff;
+    outline: none;
+    border-color: #000000;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 34px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #000000;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.form-reserve-room-info-input-group-3 input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.form-reserve-room-info-input-group-3 input:focus::placeholder {
+    opacity: 0;
+}
+
+/* style form-reserve-room-info-input-group-4 */
+.form-reserve-room-info-input-group-4{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.form-reserve-room-info-input-group-4 textarea{
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+    resize: vertical;
+    margin-top: 10px;
+    background: transparent;
+    outline: none;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    border-style: ridge ;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.form-reserve-room-info-input-group-4 textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.form-reserve-room-info-input-group-4 textarea:focus::placeholder {
+    opacity: 0;
+}
+
+
+/* style form-reserve-room-info-btn */
+.form-reserve-room-info-btn{
+    align-items: center;
+    background: linear-gradient(45deg, rgb(34, 167, 93) 0%, rgb(226, 6, 19) 100%);
+    border-radius: 12px;
+    gap: 10px;
+    justify-content: center;
+    padding: 14px 10px;
+    width: 300px;
+    border: none;
+    color: #ffffff;
+    margin-left: 6px;
+    cursor: pointer;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+}
+
+.form-reserve-room-info-btn:hover{
+    background: linear-gradient(45deg, rgb(45, 226, 126) 0%,rgb(248, 17, 32) 100%);
+}
