@@ -58,13 +58,24 @@ function AddRoomForm(){
 
 
                 <div className="form-add-room-info-input-group-3">
-                    <label for="commentaire" className="form-add-room-info-input-group-label">Déscription</label>
+                    <label for="commentaire" className="form-add-room-info-input-group-label">Déscription salle :</label>
                     <textarea id="commentaire" name="commentaire" rows="5" cols="50" placeholder="Ajoutez une déscription..."></textarea>
                 </div>                        
 
 
 
                 <div className="form-add-room-info-input-group-4">
+                    <label className="form-add-room-info-input-group-label">Matériels : </label>
+                    <div className="form-add-room-info-input-group-4-div">
+                        <input type="text" placeholder="Nom materiel" className="form-add-room-info-input-group-4"/>
+                        <input type="number" placeholder="Quantité" className="form-add-room-info-input-group-4"/>
+                        <div>
+                            <input type="checkbox" id="materialStatus" name="materialStatus" className="form-add-room-info-input-group-4"/>
+                            <label for="materialStatus" className="form-add-room-info-input-group-label">Bon état</label>
+                        </div>
+                    </div>
+                    <button>Ajouter d'autres</button>
+
 
                 </div>
 

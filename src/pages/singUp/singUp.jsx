@@ -5,7 +5,7 @@ export function SingUp() {
     return(
         <div className="pg-singup">
             <header>
-                <Header header={false} />
+                <Header header={"none"} />
             </header>
             <div className="pg-singup-body">
                 <div className="pg-singup-txt-img">

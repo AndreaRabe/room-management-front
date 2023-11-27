@@ -74,7 +74,6 @@
     width: fit-content;
     background: transparent;
     cursor: default;
-    margin-left: -275px;
 }
 
 .form-singin-div-1-checkbox{
@@ -87,7 +86,7 @@
     background: transparent;
     color: #ffffff;
     font-family: "Outfit-SemiBold", Helvetica;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 400;
     cursor: pointer;
 }

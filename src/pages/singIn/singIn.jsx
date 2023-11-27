@@ -10,7 +10,7 @@ export function SingIn(){
     return(
         <div className="pg-singin">
             <header>
-                <Header header={false} />
+                <Header header={"none"}/>
             </header>
             <div className="pg-singin-body">
                 <div className="pg-singin-txt-img">

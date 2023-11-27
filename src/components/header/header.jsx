@@ -10,16 +10,21 @@ export function Header({header}){
             <a href="https://omnis.mg/" className='header-a'>
                 <img src={logoOmnis} alt="OMNIS Logo" className='header-img'/>
             </a>
-            {navbarInformation.map((item, index) => <span className='header-item' key={index}>{item}</span>)}
-            {header &&
+            {navbarInformation.map((item, index) => <span className='header-item' key={index}>{item}</span>)}           
+            
+            {header === true &&
             <>
                 <SingInButton />
                 <SingUpButton />
             </>}
-            {!header &&
+            {header === false &&
             <>
                 <AccountButton />
                 <LogOut />
+            </>}
+
+            {header === "none" &&
+            <>
             </>}
         </header>
     )
