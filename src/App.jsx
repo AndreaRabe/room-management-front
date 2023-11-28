@@ -10,7 +10,7 @@ import { AddRoom } from './pages/add_room/add_room';
 function App() {
   return (
     <div className='app'>
-      <ReservationList />
+      <SingIn />
     </div>
 
   );
