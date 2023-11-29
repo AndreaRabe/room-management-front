@@ -67,9 +67,9 @@ export function Reservation(){
     )
 }
 
-export function DeleteButton(){
+export function DeleteButton({onConfirm}){
     return(
-        <button className="btn-delete" >
+        <button className="btn-delete" onClick={onConfirm} >
             <span className="btn-delete-span"> <FontAwesomeIcon icon={faTrash} /> </span>
         </button>
     )
