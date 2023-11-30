@@ -81,6 +81,7 @@
 .user-list-table  th {
     background-color: #22a75e52;
     font-family: "Outfit-Light", Helvetica;
+    cursor: pointer;
   }
 
 .user-list-table input[type="text"] {

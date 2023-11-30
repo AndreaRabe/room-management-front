@@ -2,7 +2,6 @@ import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
 import { DeleteButton } from "../../components/button/button";
 import LoupeImg from "../../assets/images/loupe.png" 
-import { UserListTable } from "../../utils/test";
 import './user_list.css'
 
 const users = [
@@ -99,44 +98,44 @@ export function UserList(){
     )
 }
 
-// function UserListTable(){
-//     return(
-//         <div className="user-list-table">
-//             <form action="" className="user-list-table-form">
-//               <input type="text" placeholder="Rechercher..."></input>
-//               <button><img src={LoupeImg} alt="Loupe" /></button>
-//             </form>
-//             <table>
-//                 <thead>
-//                     <tr>
-//                         <th>Email</th>
-//                         <th>Nom</th>
-//                         <th>Prénom</th>
-//                         <th>Téléphone</th>
-//                         <th>Entreprise</th>
-//                         <th>Département</th>
-//                         <th>Action</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
+function UserListTable(){
+    return(
+        <div className="user-list-table">
+            <form action="" className="user-list-table-form">
+              <input type="text" placeholder="Rechercher..."></input>
+              <button><img src={LoupeImg} alt="Loupe" /></button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Téléphone</th>
+                        <th>Entreprise</th>
+                        <th>Département</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-//                     {users.map(item=>
-//                         <tr>
-//                             <td>{item.email}</td>
-//                             <td>{item.nom}</td>
-//                             <td>{item.prenom}</td>
-//                             <td>{item.telephone}</td>
-//                             <td>{item.entreprise}</td>
-//                             <td>{item.departement}</td>
-//                             <td>
-//                               <div>
-//                                 <DeleteButton />
-//                               </div>
-//                             </td>
-//                         </tr>
-//                     )}
-//                 </tbody>
-//             </table>
-//         </div>
-//     )
-// }
+                    {users.map(item=>
+                        <tr>
+                            <td>{item.email}</td>
+                            <td>{item.nom}</td>
+                            <td>{item.prenom}</td>
+                            <td>{item.telephone}</td>
+                            <td>{item.entreprise}</td>
+                            <td>{item.departement}</td>
+                            <td>
+                              <div>
+                                <DeleteButton />
+                              </div>
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        </div>
+    )
+}

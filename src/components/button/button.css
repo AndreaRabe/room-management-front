@@ -281,7 +281,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
     background: #ff0112;
 }
 
-
+/* styly btn-edit */
 .btn-edit{
     height: 30px;
     width: 40px;
@@ -313,7 +313,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
     background: #479af1;
 }
 
-
+/* style btn-view */
 .btn-view{
     height: 30px;
     width: 40px;

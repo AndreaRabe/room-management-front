@@ -2,6 +2,7 @@ import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
 import { DeleteButton, EditButton, ViewButton } from "../../components/button/button";
 import LoupeImg from "../../assets/images/loupe.png";
+// import { ReservationListTable } from "../../utils/test";
 import './reservation_list.css';
 
 const reservations = [

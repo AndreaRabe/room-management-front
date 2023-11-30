@@ -81,6 +81,7 @@
 .reservation-list-table  th {
     background-color: #22a75e52;
     font-family: "Outfit-Light", Helvetica;
+    cursor: pointer;
   }
 
 .reservation-list-table input[type="text"] {

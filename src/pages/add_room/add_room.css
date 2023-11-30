@@ -244,16 +244,6 @@
     background: transparent;   
 }
 
-.form-add-room-info-input-group-4-div div{
-    background: transparent; 
-    display: flex;
-    flex-direction: row; 
-}
-
-.form-add-room-info-input-group-4-div div label{
-    margin-top: 19px;
-}
-
 .form-add-room-info-input-group-4-div input{
     background: transparent;
     outline: none;
@@ -302,17 +292,18 @@
     margin-left: -80px;
 }
 
-.form-add-room-info-input-group-4-div div input{
-    height: 25px;
-    margin-right: -50px;
-    margin-top: 18px;
+.form-add-room-info-input-group-4-div input:nth-child(3){
+    width: 25px;
+    margin-top: 12px;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
-.form-add-room-info-input-group-4-div div label{
+.form-add-room-info-input-group-4-div label{
     margin-top: 22px;
 }
 
-.form-add-room-info-input-group-4 button{
+.form-add-room-info-input-group-4-button-more{
     height: 30px;
     width: 150px;
     margin-left: 50px;
@@ -320,7 +311,7 @@
     background-color: #2278D4;
     border: #2278D4;
     position: relative;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
     font-family: "Outfit-SemiBold", Helvetica;
     color: #ffffff;
@@ -330,9 +321,41 @@
     line-height: normal;
 }
 
-.form-add-room-info-input-group-4 button:hover{
+.form-add-room-info-input-group-4-button-more:hover{
     background: #479af1;
 }
+
+.form-add-room-info-input-group-4-button-delete{
+    height: 30px;
+    width: 40px;
+    background-color: #e20615d3;
+    border: #e20615d3;
+    position: relative;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.form-add-room-info-input-group-4-button-delete span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.form-add-room-info-input-group-4-button-delete:hover{
+    background: #ff0112;
+}
+
 
 /* style form-add-room-info-btn */
 .form-add-room-info-btn{
