@@ -5,7 +5,9 @@ import './reserve_room.css'
 export function ReserveRoom(){
     return(
         <div className='reserve-room'>
+            <header>
             <Header header={false} />
+            </header>
             <div className="reserve-room-body">
                 <div className="reserve-room-txt-img">
                     <span>Préparez-vous à donner vie à vos événements !</span>

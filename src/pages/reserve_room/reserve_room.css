@@ -1,10 +1,20 @@
-/* input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
-} */
+}
+
+
+.reserve-room *{
+    background-image: url('../../assets/images/medium.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
 
 /* style reserve-room */
 .reserve-room{
@@ -78,7 +88,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .form-reserve-room-info-div-2{
     background: #ffffff0f;
-    margin-top: 50px;
 }
 
 .form-reserve-room-info-div-4{
@@ -169,9 +178,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .form-reserve-room-info-input-group-2 input{
-    background: #ffffff;
+    background: transparent;
     outline: none;
-    border-color: #000000;
+    border-color: #ffffff;
     border-width: 0.5px;
     border-style: ridge ;
     border-radius: 9px;
@@ -186,11 +195,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-family: "Outfit-Regular", Helvetica;
     margin-bottom: 25px;
     text-indent: 10px;
-    color: #000000;
+    color: #ffffff;
 
 }
+.form-reserve-room-info-input-group-2 input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
 
-
+.form-reserve-room-info-input-group-2 input:focus::placeholder {
+    opacity: 0;
+}
 
 /* style form-reserve-room-info-input-group-3 */
 .form-reserve-room-info-input-group-3{
@@ -213,9 +229,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .form-reserve-room-info-input-group-3 input{
-    background: #ffffff;
+    background: transparent;
     outline: none;
-    border-color: #000000;
+    border-color: #ffffff;
     border-width: 0.5px;
     border-style: ridge ;
     border-radius: 9px;
@@ -230,7 +246,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-family: "Outfit-Regular", Helvetica;
     margin-bottom: 25px;
     text-indent: 10px;
-    color: #000000;
+    color: #ffffff;
 
     &:focus {
         color: #ffff;

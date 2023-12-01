@@ -1,3 +1,11 @@
+.add-room *{
+    background-image: url('../../assets/images/medium.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
 /* style reserve-room */
 .add-room{
     height: 90%;
@@ -71,7 +79,6 @@
 /* style form-add-room-info */
 .form-add-room-info-div-2{
     background: #ffffff0f;
-    margin-top: 50px;
 }
 
 .form-add-room-info-div-4{
@@ -308,7 +315,7 @@
     width: 150px;
     margin-left: 50px;
     margin-top: -10px;
-    background-color: #2278D4;
+    background: #2278D4;
     border: #2278D4;
     position: relative;
     border-radius: 8px;
@@ -328,7 +335,7 @@
 .form-add-room-info-input-group-4-button-delete{
     height: 30px;
     width: 40px;
-    background-color: #e20615d3;
+    background: #e20615d3;
     border: #e20615d3;
     position: relative;
     cursor: pointer;
@@ -337,7 +344,7 @@
 }
 
 .form-add-room-info-input-group-4-button-delete span{
-    background-color: transparent;
+    background: transparent;
     color: #ffffff;
     font-family: "Outfit-Bold", Helvetica;
     font-size: 14px;
@@ -355,6 +362,43 @@
 .form-add-room-info-input-group-4-button-delete:hover{
     background: #ff0112;
 }
+
+/* style form-add-room-info-input-group-5 */ 
+.form-add-room-info-input-group-5{
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-add-room-info-input-group-5 > * {
+    margin: 10px; /* Ajoutez la marge de 100px autour de chaque enfant du div */
+  }
+
+.form-add-room-info-input-group-5-div{
+    background: transparent;
+}
+
+.form-add-room-info-input-group-5-div div{
+    background: transparent;
+}
+
+.form-add-room-info-input-group-5-div input{
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+}
+
+
+.form-add-room-info-input-group-5-div div img{
+    background: transparent;
+    margin-top: 10px;
+}
+
 
 
 /* style form-add-room-info-btn */

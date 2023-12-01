@@ -147,7 +147,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
     margin-right: 100px;
     height: 40px;
     width: 130px;
-    background-color: #22a75e52;
+    background: #22a75e52!important;
     border: #22a75e52;
     border-radius: 52px;
     position: absolute;
@@ -156,7 +156,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 }
 
 .btn-account-span{
-    background-color: transparent;
+    background: transparent!important;
     color: #ffffff;
     font-family: "Outfit-Bold", Helvetica;
     font-size: 14px;
@@ -172,13 +172,13 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 }
 
 .btn-account:hover{
-    background: #22a75e94;
+    background: #22a75eab!important;
 }
 
 /* style logOut button */
 .btn-logout img{
     right: 0;
-    margin-right: 20px;
+    margin-right: 40px;
     position: absolute;
     cursor: pointer;
     margin-top: 5px;
@@ -254,7 +254,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
     height: 30px;
     width: 40px;
     margin-right: -35px;
-    background-color: #e20615d3;
+    background: #e20615d3;
     border: #e20615d3;
     box-shadow: 0px 10px 25px #e2061534;
     position: relative;

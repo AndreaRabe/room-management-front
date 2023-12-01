@@ -10,7 +10,9 @@ const responsable = ["Randro", "Rakoto"]
 export function AddRoom(){
     return(
         <div className="add-room">
+            <header>
             <Header header={false} />
+            </header>
             <div className="add-room-body">
                 <div className="add-room-txt-img">
                     <span>Ajoutez et organisez les salles pour offrir une expérience sans pareille.</span>
@@ -94,7 +96,7 @@ export function AddRoom(){
 //     )
 // }
 
-function AddRoomForm() {
+function AddRoomForm() {  
   const [equipmentCount, setEquipmentCount] = useState(1);
 
   const handleAddEquipment = () => {
@@ -155,6 +157,11 @@ function AddRoomForm() {
                         <label htmlFor="commentaire" className="form-add-room-info-input-group-label">Description salle :</label>
                         <textarea id="commentaire" name="commentaire" rows="5" cols="50" placeholder="Ajoutez une description..."></textarea>
                     </div>
+                        <label className="form-add-room-info-input-group-label">Images : </label>
+                    <div className="form-add-room-info-input-group-5">
+                        <ImageUploader />
+                        <ImageUploader />
+                    </div>
                     <div className="form-add-room-info-input-group-4">
                         <label className="form-add-room-info-input-group-label">Matériels : </label>
                         <div className="form-add-room-info-input-group-4-div">
@@ -168,12 +175,49 @@ function AddRoomForm() {
                         {renderAdditionalEquipmentFields()}
                         <button type="button" className='form-add-room-info-input-group-4-button-more' onClick={handleAddEquipment}>Ajouter d'autres</button>
                     </div>
-                    <div className="form-add-room-info-input-group-5">
-                        {/* Ajoutez ici d'autres champs si nécessaire */}
-                    </div>
+
                     <button className="form-add-room-info-btn">Ajouter salle</button>
                 </div>
             </form>
         </div>
     );
 }
+
+function ImageUploader() {
+    const [selectedImage, setSelectedImage] = useState(null);
+  
+    const handleImageChange = (event) => {
+      const file = event.target.files[0];
+  
+      if (file) {
+        const reader = new FileReader();
+  
+        reader.onloadend = () => {
+          setSelectedImage(reader.result);
+        };
+  
+        reader.readAsDataURL(file);
+      }
+    };
+  
+    return (
+      <div className="form-add-room-info-input-group-5-div">
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+        />
+        {selectedImage && (
+          <div>
+            <img
+              src={selectedImage}
+              className="preview-image"
+              alt="Selected"
+              style={{ width: '180px', height: '100px' }}
+            />
+          </div>
+        )}
+      </div>
+    );
+  }
+  
