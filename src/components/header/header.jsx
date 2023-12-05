@@ -2,7 +2,7 @@ import logoOmnis from '../../assets/images/logo-omnis.png';
 import './header.css';
 import { SingInButton, SingUpButton, AccountButton, LogOut } from '../button/button';
 
-const navbarInformation = ["Acceuil", "Reserver Salle", "Liste Reservation"]
+const navbarInformation = ["Acceuil", "Reserver Salle"]
 
 export function Header({header}){
     return(

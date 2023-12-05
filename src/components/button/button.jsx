@@ -75,17 +75,17 @@ export function DeleteButton({onConfirm}){
     )
 }
 
-export function EditButton(){
+export function EditButton({ onClick }){
     return(
-        <button className="btn-edit" >
+        <button className="btn-edit" onClick={onClick} >
             <span className="btn-edit-span">  <FontAwesomeIcon icon={faEdit} /></span>
         </button>
     )
 }
 
-export function ViewButton(){
+export function ViewButton({ onClick }){
     return(
-        <button className="btn-view" >
+        <button className="btn-view" onClick={onClick} >
             <span className="btn-view-span">  <FontAwesomeIcon icon={faEye} /></span>
         </button>
     )

@@ -3,7 +3,6 @@
     margin-left: -970px;
 }
 
-
 .reservation-list-table input{
     background: #ffffff0f;;
     outline: none;
@@ -39,7 +38,6 @@
     opacity: 0;
 }
 
-
 .reservation-list-table-form button {
     cursor: pointer;
     background: transparent;
@@ -71,11 +69,22 @@
     font-family: "Outfit-Light", Helvetica;
 }
 
-.reservation-list-table  th, .reservation-list-table td {
+.reservation-list-table  th{
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
     font-family: "Outfit-Light", Helvetica;
+}
+
+.reservation-list-table td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.reservation-list-table-view td{
+    background-color: #ffffff28 !important ;
 }
 
 .reservation-list-table  th {
@@ -93,4 +102,171 @@
     display: flex;
     flex-direction: column;
     width: fit-content;
+}
+
+/* style delete button */
+.no-scroll {
+    overflow: hidden;
+}
+
+.custom-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.466);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px); /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;/* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+}
+
+.custom-dialog {
+    background: rgba(92, 92, 92, 0.986);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+}
+
+.dialog-title {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    cursor: default;
+    background: transparent;
+}
+
+.dialog-content {
+    margin: 0 0 20px;
+    color: #ffffffa2;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    cursor: default;
+    background: transparent;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    background: transparent;
+}
+
+.dialog-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+.open-dialog-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+/* style delete button */
+.custom-dialog-overlay-edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.466);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px); /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;/* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+}
+.custom-dialog-edit{
+    background: rgba(92, 92, 92, 0.986);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+}
+
+.form-reserve-room-edit{
+    background-color: rgb(214, 19, 19);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.form-reserve-room-edit-save{
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+
+
+/* style for reservation_list_admin */
+.form-singin-div-1-checkbox-admin{
+    background: transparent;
+    margin-top: 20px;
+    justify-content: space-around;
+    margin-left: 65px;
+}
+
+.form-singin-div-1-checkbox-admin span{
+    background: transparent;
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+
+/* style reservation-view */
+.custom-dialog-overlay-view {
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.466);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px); /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;/* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+}
+.custom-dialog-view{
+    background: rgba(92, 92, 92, 0.986);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+    max-width: 50%;
+}
+
+.custom-dialog-view >* {
+    background: transparent;
 }
