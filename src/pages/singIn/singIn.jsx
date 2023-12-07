@@ -1,7 +1,10 @@
 import { Header } from "../../components/header/header"
 import SinInImg from '../../assets/images/signIn.png';
 import './singIn.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useNavigate } from "react-router";
+
 
 
 const departement = ["Informatique", "Ressources Humaines", "Patrimoine"]
@@ -25,6 +28,7 @@ export function SingIn(){
 
 function SingInForm(){
     const [isAdmin, setIsAdmin] = useState(false)
+    const navigate = useNavigate()
 
     function handleTabClick(){
         setIsAdmin(!isAdmin)
@@ -39,7 +43,7 @@ function SingInForm(){
                 </div>
                 {!isAdmin ? <SingInFormClient /> : <SingInFormAdmin/>}
                 <div className="form-singin-div-3">
-                    Vous avez déjà un compte ?<b className="form-singin-div-3-b">Se connecter</b>
+                    Vous avez déjà un compte ?<b className="form-singin-div-3-b" onClick={() => navigate('/singUp')}>Se connecter</b>
                 </div>
             </div>
         </div>
@@ -55,9 +59,9 @@ function SingInFormClient(){
         is_admin:false,
         password: '',
         company: '',
-        id_department: 1,
+        id_department: 0,
       });
-    
+
       const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -65,25 +69,48 @@ function SingInFormClient(){
           [name]: value,
         });
       };
-    
-      function handleSubmit(e) {
+      
+      const [departments, setDepartments] = useState([]);
+      
+      const handleDepartmentChange = (event) => {
+        const selectedDepartmentId = parseInt(event.target.value);
+        setFormData({
+          ...formData,
+          id_department: selectedDepartmentId,
+        });
+      };
+
+
+      useEffect(() => {
+        // Charger les départements depuis le back-end ici
+        axios.get('/department/get/')
+          .then((response) => {
+            setDepartments(response.data);
+          })
+          .catch((error) => {
+            console.error('Error fetching departments:', error.message);
+          });
+      }, []);   
+
+      
+      const handleSubmit = async (e) => {
         e.preventDefault();
     
         try {
-          const response = fetch('/user/new', {
-            method: 'POST',
+          const response = await axios.post('/user/new', formData, {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
           });
-          if (response.ok) {
+    
+          if (response.status === 201) {
+            window.location.href = '/singUp';
             console.log('User created successfully!');
           } else {
             console.error('Failed to create user:', response.statusText);
           }
         } catch (error) {
-          console.error('Error:', error);
+          console.error('Error:', error.message);
         }
       };
     return(
@@ -158,16 +185,22 @@ function SingInFormClient(){
                             onChange={handleInputChange}
                         />
 
-                        <select 
-                            id="department"
-                            name="department"
-                            className="formClient-singin-dropdown"
-                            // onChange={handleInputChange}
-                            // value={formData.id_department}
-                        >
-                            <option value="" disabled selected>Votre departement</option>
-                            {/* {departement.map((item, key)=> <option value={item} key={{key}}>{item}</option> )} */}
-                        </select>
+                        <select
+                              id="department"
+                              name="department"
+                              className="formClient-singin-dropdown"
+                              onChange={handleDepartmentChange}
+                              value={formData.id_department}
+                            >
+                              <option value="" disabled selected>
+                                Votre département
+                              </option>
+                              {departments.map((department, index) => (
+                                <option value={index + 1 } key={index} >
+                                  {department.department_name}
+                                </option>
+                              ))}
+                          </select>
                         </div>                        
 
                         <button type="submit" className="formClient-singin-btn">Creer compte</button>
@@ -187,7 +220,7 @@ function SingInFormAdmin(){
       is_admin: true,
       tel: '',
       password: '',
-      id_department: 1,
+      id_department: 0,
     });
   
     const handleChange = (event) => {
@@ -197,29 +230,52 @@ function SingInFormAdmin(){
         [name]: value,
       });
     };
+
+
+    const [departments, setDepartments] = useState([]);
+      
+    const handleDepartmentChange = (event) => {
+      const selectedDepartmentId = parseInt(event.target.value);
+      setFormData({
+        ...formData,
+        id_department: selectedDepartmentId,
+      });
+    };
+
+
+    useEffect(() => {
+      // Charger les départements depuis le back-end ici
+      axios.get('/department/get/')
+        .then((response) => {
+          setDepartments(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching departments:', error.message);
+        });
+    }, []);   
   
   
-   function handleSubmit(e) {
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log(JSON.stringify(formData))
+  
       try {
-        const response = fetch('/user/new', {
-          method: 'POST',
+        const response = await axios.post('/user/new', formData, {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
         });
-    
-        if (response.ok) {
+  
+        if (response.status === 201) {
+          window.location.href = '/singUp';
           console.log('User created successfully!');
         } else {
           console.error('Failed to create user:', response.statusText);
         }
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error:', error.message);
       }
     };
+
     return(
           <div>
             <form className="formAdmin-singin-div-2" onSubmit={handleSubmit}>
@@ -299,20 +355,22 @@ function SingInFormAdmin(){
                 </div>
   
                 <div className="formAdmin-singin-input-group">
-                  <select
-                    id="deparement"
-                    name="id_department"
-                    className="formAdmin-singin-dropdown"
-                    // onChange={handleChange}
-                    // value={formData.id_department}
+                <select
+                    id="department"
+                    name="department"
+                    className="formClient-singin-dropdown"
+                    onChange={handleDepartmentChange}
+                    value={formData.id_department}
                   >
-                    <option value="" disabled selected>Votre département</option>
-                    {/* {departement.map((item, key) => (
-                      <option value={item} key={key}>
-                        {item}
+                    <option value="" disabled selected>
+                      Votre département
+                    </option>
+                    {departments.map((department, index) => (
+                      <option value={index + 1 } key={index} >
+                        {department.department_name}
                       </option>
-                    ))} */}
-                  </select>
+                    ))}
+                </select>
                 </div>
   
                 <button type="submit" className="formClient-singin-btn">
@@ -322,4 +380,4 @@ function SingInFormAdmin(){
             </form>
         </div>
     )
-  }
+}

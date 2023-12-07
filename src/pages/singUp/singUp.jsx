@@ -2,6 +2,9 @@ import { Header } from "../../components/header/header"
 import SinUpImg from '../../assets/images/singUp.png';
 import './singUp.css'
 import { useState } from "react";
+import axios from 'axios';
+import { useNavigate } from "react-router";
+
 export function SingUp() {
     return(
         <div className="pg-singup">
@@ -13,45 +16,42 @@ export function SingUp() {
                     <span>Heureux de vous revoir !</span>
                     <img src={SinUpImg} alt="Conference table" />
                 </div>
-                <SingUpForm />
+                <SignUpForm />
             </div>
         </div>
     )
 }
 
-function SingUpForm() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-  
-    const handleLogin = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await fetch('/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: new URLSearchParams({
-            username: email,
-            password: password,
-            grant_type: '',
-            scope: '',
-          }),
-        });
-  
-        if (response.ok) {
-          const data = await response.json();
-          const accessToken = data.access_token;
-  
+function SignUpForm() {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/login', {
+        username: email,
+        password: password,
+        grant_type: '',
+        scope: '',
+      }, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded', // Adjust content type if needed
+        },
+      });
+
+      if (response.status === 200) {
+        const accessToken = response.data.access_token;
+
         // Store the token where needed (localStorage, global state, etc.)
         localStorage.setItem('access_token', accessToken);
-  
+
         // Redirect the user to the desired page or state after successful login
-        // window.location.href = '/dashboard';
+        window.location.href = '/';
         console.log('Successfully logged in! Token:', accessToken);
       } else {
-        const errorData = await response.json();
-        console.error('Login failed:', errorData.detail);
+        console.error('Login failed:', response.data.detail);
       }
     } catch (error) {
       console.error('Error during the request:', error);
@@ -85,7 +85,7 @@ function SingUpForm() {
             </div>
           </form>
           <div className="form-singup-div-3">
-            Vous n'avez pas de compte ?<b className="form-singup-div-3-b">Créer un compte</b>
+            Vous n'avez pas de compte ?<b className="form-singup-div-3-b" onClick={() => navigate('/singIn')} >Créer un compte</b>
           </div>
         </div>
       </div>

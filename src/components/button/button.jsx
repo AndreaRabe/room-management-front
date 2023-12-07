@@ -2,6 +2,8 @@ import './button.css'
 import logOut from "../../assets/images/interface-logout.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash, faEye } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router';
+
 export function SingInButton(){
     return(
         <button className="btn-singIn" >
@@ -43,8 +45,14 @@ export function AccountButton() {
 }
 
 export function LogOut() {
+    const navigate = useNavigate()
+    function  handleLogOut(){
+        localStorage.removeItem('access_token');
+        navigate('/');
+        window.location.reload();
+    }
     return(
-        <div className='btn-logout'>
+        <div className='btn-logout' onClick={() => handleLogOut()}>
             <img src={logOut} alt="Logout Button"/>
         </div>
 
