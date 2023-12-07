@@ -8,10 +8,12 @@ import { ReservationList } from './pages/reservation_list/reservation_list';
 import { AddRoom } from './pages/add_room/add_room';
 import { ReservationListForAdmin } from './pages/reservation_list/reservation_list_admin';
 import { createBrowserRouter } from "react-router-dom";
-function App() {
+
+
+export function App() {
   return (
     <div className='app'>
-      <SingUp />
+      <RoomList />
     </div>
 
   );

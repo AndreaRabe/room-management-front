@@ -3,6 +3,7 @@ import { Footer } from "../../components/footer/footer";
 import { Reservation } from "../../components/button/button";
 import { salles_examples } from "../home/home";
 import './room_list.css'
+import { useNavigate } from "react-router";
 
 export function RoomList(){
     return(
@@ -15,6 +16,7 @@ export function RoomList(){
 }
 
 function ListRoomInformation(){
+    const navigate = useNavigate()
     return(
         <div className="list-room-information">
 
@@ -51,7 +53,7 @@ function ListRoomInformation(){
                         </tr>
                     </table>
                 </div>
-                <div className="list-room-information-btn">
+                <div className="list-room-information-btn" onClick={() => navigate('/AddRoom')}>
                     <Reservation />
                 </div>
             </div>

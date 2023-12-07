@@ -15,7 +15,7 @@ export function Header({header}){
             <a href="https://omnis.mg/" className='header-a'>
                 <img src={logoOmnis} alt="OMNIS Logo" className='header-img'/>
             </a>
-            <span className='header-item' onClick={() => navigate('/')} >Acceuil</span>
+            <span className='header-item' onClick={() => navigate('/')} >Accueil</span>
             <span className='header-item' onClick={() => navigate('/RoomList')} >Reserver salle</span>    
 
             {(isLogged && !userInformation.user_status ) &&
@@ -24,6 +24,7 @@ export function Header({header}){
 
             {(isLogged && userInformation.user_status)&&
                 <>
+                    <span className='header-item' onClick={() => navigate('/AddRoom')} >Ajouter Salle</span>
                     <span className='header-item' onClick={() => navigate('/ReservationListAdmin')} >Liste des réservations</span>    
                     <span className='header-item' onClick={() => navigate('/UserList')} >Liste des utilisateurs</span>    
                 </>
