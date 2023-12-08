@@ -1,9 +1,10 @@
-import { Header } from "../../components/header/header"
+  import { Header } from "../../components/header/header"
 import SinInImg from '../../assets/images/signIn.png';
 import './singIn.css'
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router";
+import { BASE_URL } from "../../constants/url";
 
 
 
@@ -53,13 +54,13 @@ function SingInForm(){
 function SingInFormClient(){
     const [formData, setFormData] = useState({
         email: '',
-        name: '',
+        last_name: '',
         first_name: '',
-        tel: '',
-        is_admin:false,
+        phone: '',
+        is_superuser:false,
         password: '',
         company: '',
-        id_department: 0,
+        departement_id: 0,
       });
 
       const handleInputChange = (event) => {
@@ -76,15 +77,16 @@ function SingInFormClient(){
         const selectedDepartmentId = parseInt(event.target.value);
         setFormData({
           ...formData,
-          id_department: selectedDepartmentId,
+          departement_id: selectedDepartmentId,
         });
       };
 
 
       useEffect(() => {
         // Charger les départements depuis le back-end ici
-        axios.get('/department/get/')
+        axios.get(`${BASE_URL}/departement`)
           .then((response) => {
+            console.log(response);
             setDepartments(response.data);
           })
           .catch((error) => {
@@ -95,9 +97,9 @@ function SingInFormClient(){
       
       const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        
         try {
-          const response = await axios.post('/user/new', formData, {
+          const response = await axios.post(`${BASE_URL}/auth/register`, formData, {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -132,8 +134,8 @@ function SingInFormClient(){
                             type="text"
                             placeholder="Nom"
                             className="formClient-singin-input"
-                            name="name"
-                            value={formData.name}
+                            name="first_name"
+                            value={formData.first_name}
                             onChange={handleInputChange}
                         />
                         </div>
@@ -144,16 +146,16 @@ function SingInFormClient(){
                              type="text"
                              placeholder="Prénom"
                              className="formClient-singin-input"
-                             name="first_name"
-                             value={formData.first_name}
+                             name="last_name"
+                             value={formData.last_name}
                              onChange={handleInputChange}
                         />
                             <input
                                 type="text"
                                 placeholder="Tel +261"
                                 className="formClient-singin-input"
-                                name="tel"
-                                value={formData.tel}
+                                name="phone"
+                                value={formData.phone}
                                 onChange={handleInputChange}
                             />
                         </div>
@@ -190,14 +192,14 @@ function SingInFormClient(){
                               name="department"
                               className="formClient-singin-dropdown"
                               onChange={handleDepartmentChange}
-                              value={formData.id_department}
+                              value={formData.departement_id}
                             >
                               <option value="" disabled selected>
                                 Votre département
                               </option>
                               {departments.map((department, index) => (
-                                <option value={index + 1 } key={index} >
-                                  {department.department_name}
+                                <option value={department.id} key={index} >
+                                  {department.name}
                                 </option>
                               ))}
                           </select>
@@ -213,14 +215,14 @@ function SingInFormClient(){
 function SingInFormAdmin(){
     const [formData, setFormData] = useState({
       email: '',
-      name: '',
+      last_name: '',
       first_name: '',
       IM: '',
       function: '',
-      is_admin: true,
-      tel: '',
+      is_superuser: true,
+      phone: '',
       password: '',
-      id_department: 0,
+      departement_id: 0,
     });
   
     const handleChange = (event) => {
@@ -238,14 +240,14 @@ function SingInFormAdmin(){
       const selectedDepartmentId = parseInt(event.target.value);
       setFormData({
         ...formData,
-        id_department: selectedDepartmentId,
+        departement_id: selectedDepartmentId,
       });
     };
 
 
     useEffect(() => {
       // Charger les départements depuis le back-end ici
-      axios.get('/department/get/')
+      axios.get(`${BASE_URL}/departement`)
         .then((response) => {
           setDepartments(response.data);
         })
@@ -259,7 +261,7 @@ function SingInFormAdmin(){
       e.preventDefault();
   
       try {
-        const response = await axios.post('/user/new', formData, {
+        const response = await axios.post(`${BASE_URL}/auth/register`, formData, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -295,8 +297,8 @@ function SingInFormAdmin(){
                     type="text"
                     placeholder="Nom"
                     className="formAdmin-singin-input"
-                    name="name"
-                    value={formData.name}
+                    name="first_name"
+                    value={formData.first_name}
                     onChange={handleChange}
                   />
                 </div>
@@ -306,8 +308,8 @@ function SingInFormAdmin(){
                     type="text"
                     placeholder="Prénom"
                     className="formAdmin-singin-input"
-                    name="first_name"
-                    value={formData.first_name}
+                    name="last_name"
+                    value={formData.last_name}
                     onChange={handleChange}
                   />
                   <input
@@ -333,8 +335,8 @@ function SingInFormAdmin(){
                     type="text"
                     placeholder="Tel +261"
                     className="formAdmin-singin-input"
-                    name="tel"
-                    value={formData.tel}
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
                   />
                 </div>
@@ -360,14 +362,14 @@ function SingInFormAdmin(){
                     name="department"
                     className="formClient-singin-dropdown"
                     onChange={handleDepartmentChange}
-                    value={formData.id_department}
+                    value={formData.departement_id}
                   >
                     <option value="" disabled selected>
                       Votre département
                     </option>
                     {departments.map((department, index) => (
-                      <option value={index + 1 } key={index} >
-                        {department.department_name}
+                      <option value={department.id} key={index} >
+                        {department.name}
                       </option>
                     ))}
                 </select>

@@ -119,13 +119,13 @@ export const salles_examples = [
 
 export function Home(){
     return(
-        <div className="home">
+        <div className="home transparent">
             <Header header={true}/>
 
-            <div className="home-body">
-                <div className="home-text">
-                    <span className="home-body-span-1">Découvrez des espaces de conférence spacieux pour accueillir votre événement !</span> <br />
-                    <div className="home-body-span-2">Trouvez la salle parfaite pour votre conférence parmi nos espaces spacieux et équipés des dernières technologies pour assurer le succès de votre événement. Que ce soit une réunion d'équipe dynamique ou une conférence d'envergure, nous avons l'endroit idéal qui répond à vos besoins. Commencez dès maintenant à planifier votre prochain événement mémorable.</div>
+            <div className="home-body background-color">
+                <div className="home-text transparent">
+                    <span className="home-body-span-1 transparent">Découvrez des espaces de conférence spacieux pour accueillir votre événement !</span> <br />
+                    <div className="home-body-span-2 transparent" >Trouvez la salle parfaite pour votre conférence parmi nos espaces spacieux et équipés des dernières technologies pour assurer le succès de votre événement. Que ce soit une réunion d'équipe dynamique ou une conférence d'envergure, nous avons l'endroit idéal qui répond à vos besoins. Commencez dès maintenant à planifier votre prochain événement mémorable.</div>
                 </div>
                 <ListRoomHome />
             </div>
@@ -137,11 +137,11 @@ export function Home(){
 
 function ListRoomHome(){
     return(
-        <div className="home-list-Room">
+        <div className="home-list-Room transparent">
 
             {salles_examples.map((item, index)=>
             
-            <div className="home-list-Room-item">
+            <div className="home-list-Room-item transparent">
                 <div className="home-list-Room-description">
                     <div className="home-list-Room-title">
                         Salle {index<9 ? `0${index+1}`: index+1}
@@ -156,7 +156,7 @@ function ListRoomHome(){
                         <SeeMore />
                     </div>
                 </div>
-                <div className="home-list-Room-image">
+                <div className="home-list-Room-image transparent">
                     <img src={item.image} alt="Conference Room" />
                 </div>
             </div>
