@@ -344,3 +344,68 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 .btn-view:hover{
     background: rgb(40, 211, 117);
 }
+
+/* style btn-delete-room */
+.btn-delete-room{
+    height: 40px;
+    width: 120px;
+    background: #e20615d3;
+    border: #e20615d3;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #e2061534;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-delete-room-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-delete-room:hover{
+    background: #ff0112;
+}
+
+
+/* style btn-edit-room */
+.btn-edit-room{
+    height: 40px;
+    width: 120px;
+    background-color: #2278D4;
+    border: #2278D4;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #2278d436;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-edit-room-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-edit-room:hover{
+    background: #479af1;
+}

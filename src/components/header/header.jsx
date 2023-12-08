@@ -28,7 +28,6 @@ export function Header({header}){
                     <span className='header-item' onClick={() => navigate('/ReservationListAdmin')} >Liste des réservations</span>    
                     <span className='header-item' onClick={() => navigate('/UserList')} >Liste des utilisateurs</span>    
                 </>
-
             }
 
 

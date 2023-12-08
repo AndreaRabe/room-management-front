@@ -99,3 +99,18 @@ export function ViewButton({ onClick }){
     )
 }
 
+export function DeleteButtonRoom(){
+    return(
+        <button className="btn-delete-room" >
+            <span className="btn-delete-room-span">Supprimer</span>
+        </button>
+    )
+}
+
+export function EditButtonRoom(){
+    return(
+        <button className="btn-edit-room" >
+            <span className="btn-edit-room-span">Modifier</span>
+        </button>
+    )
+}

@@ -3,7 +3,9 @@ import { Footer } from "../../components/footer/footer";
 import { Reservation } from "../../components/button/button";
 import { salles_examples } from "../home/home";
 import './room_list.css'
-import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { DeleteButtonRoom, EditButtonRoom } from "../../components/button/button";
+import { decodeToken } from "../../services/jwtDecode";
 
 export function RoomList(){
     return(
@@ -16,7 +18,8 @@ export function RoomList(){
 }
 
 function ListRoomInformation(){
-    const navigate = useNavigate()
+    const isLogged = window.localStorage.getItem("access_token")
+    const userInformation = decodeToken()
     return(
         <div className="list-room-information">
 
@@ -53,8 +56,20 @@ function ListRoomInformation(){
                         </tr>
                     </table>
                 </div>
-                <div className="list-room-information-btn" onClick={() => navigate('/AddRoom')}>
-                    <Reservation />
+                <div className="list-room-information-btn">
+                    { (isLogged && userInformation.user_status) &&
+                        <>
+                        <Link to=''style={{ textDecoration: 'none', background: 'transparent' }} >
+                            <DeleteButtonRoom />
+                        </Link>                    
+                        <Link to=''style={{ textDecoration: 'none', background: 'transparent'  }} >
+                            <EditButtonRoom />
+                    </Link>
+                   </>
+                   }
+                   <Link to='/AddRoom'style={{ textDecoration: 'none', background: 'transparent' }} >
+                        <Reservation />
+                   </Link> 
                 </div>
             </div>
             )}

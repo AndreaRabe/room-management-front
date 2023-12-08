@@ -84,9 +84,15 @@
     font-family: "Outfit-Light", Helvetica;
 }
 
-.list-room-information-btn{
-    background: transparent;
+.list-room-information-btn {
+    display: flex;
+    justify-content: flex-end;  /* Align buttons to the right */
     margin-top: 10px;
-    width: fit-content;
-    margin-left: 850px;
+    background: transparent;
+    width:990px;
+}
+
+.list-room-information-btn > * {
+    margin-right: 10px;
+    background: transparent;
 }
