@@ -155,7 +155,6 @@ export default function AdminListReservation() {
         ],
       },
     },
-    
   ]);
 
   const columns = [
@@ -236,27 +235,26 @@ export default function AdminListReservation() {
   ];
 
   return (
-    <>
-      <Box sx={{
+    <Box
+      sx={{
         width: "70%",
-        margin: 'auto',
-        marginBottom: '25px'
-      }}>
-        Admin Bruh
-        <DataGrid
-          rows={reservations}
-          columns={columns}
-          localeText={frFR.components.MuiDataGrid.defaultProps.localeText}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 10,
-              },
+        margin: "auto",
+        marginBottom: "25px",
+      }}
+    >
+      <DataGrid
+        rows={reservations}
+        columns={columns}
+        localeText={frFR.components.MuiDataGrid.defaultProps.localeText}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 10,
             },
-          }}
-          disableRowSelectionOnClick
-        />
-      </Box>
-    </>
+          },
+        }}
+        disableRowSelectionOnClick
+      />
+    </Box>
   );
 }

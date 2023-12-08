@@ -281,7 +281,7 @@
     background: transparent;
 }
 
-&& {
+/* && {
     .MuiDataGrid-cell {
         color: white;
     }
@@ -298,9 +298,7 @@
         color: white;
     }
 
-    .MuiDataGrid-root {
-        /* color: yellow; */
-    }
+    .MuiDataGrid-root {}
 
     p {
         color: white
@@ -309,12 +307,8 @@
     .MuiButtonBase-root {
         color: blue;
 
-        &:disabled {
-            /* color: ${(props) => props.theme.colors.gray9}; */
-        }
+        &:disabled {}
     }
 
-    .MuiSelect-select {
-        /* color: ${(props) => props.theme.colors.gray12}; */
-    }
-}
+    .MuiSelect-select {}
+} */
