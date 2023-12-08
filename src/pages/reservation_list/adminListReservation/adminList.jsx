@@ -155,13 +155,14 @@ export default function AdminListReservation() {
         ],
       },
     },
+    
   ]);
 
   const columns = [
     {
       field: "room",
       headerName: "Lieu",
-      flex: 1.5,
+      flex: 2,
       editable: false,
       renderCell: (params) => (
         <>
@@ -238,7 +239,8 @@ export default function AdminListReservation() {
     <>
       <Box sx={{
         width: "70%",
-        margin: 'auto'
+        margin: 'auto',
+        marginBottom: '25px'
       }}>
         Admin Bruh
         <DataGrid

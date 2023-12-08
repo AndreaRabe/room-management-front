@@ -21,6 +21,7 @@
     "js-token": "^1.0.0",
     "jwt-decode": "^4.0.0",
     "loose-envify": "^1.4.0",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.20.1",
