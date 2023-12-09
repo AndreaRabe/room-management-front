@@ -1,14 +1,15 @@
 /* style user-list-table*/
-.reservation-list-table-form{
+.reservation-list-table-form {
     margin-left: -970px;
 }
 
-.reservation-list-table input{
-    background: #ffffff0f;;
+.reservation-list-table input {
+    background: #ffffff0f;
+    ;
     outline: none;
     border-color: #ffffff;
     border-width: 0.5px;
-    border-style: ridge ;
+    border-style: ridge;
     border-radius: 9px;
     height: 20px;
     width: 220px;
@@ -43,7 +44,8 @@
     background: transparent;
     background: none;
     border: none;
-    margin-left: -30px; /* Ajusté la marge pour chevaucher légèrement l'image */
+    margin-left: -30px;
+    /* Ajusté la marge pour chevaucher légèrement l'image */
 }
 
 .reservation-list-table-form img {
@@ -53,7 +55,7 @@
 
 
 /* style user-list-table */
-.reservation-list-table{
+.reservation-list-table {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,36 +71,36 @@
     font-family: "Outfit-Light", Helvetica;
 }
 
-.reservation-list-table  th{
+.reservation-list-table th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
     font-family: "Outfit-Light", Helvetica;
 }
 
-.reservation-list-table td{
+.reservation-list-table td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
     font-family: "Outfit-Light", Helvetica;
 }
 
-.reservation-list-table-view td{
-    background-color: #ffffff28 !important ;
+.reservation-list-table-view td {
+    background-color: #ffffff28 !important;
 }
 
-.reservation-list-table  th {
+.reservation-list-table th {
     background-color: #22a75e52;
     font-family: "Outfit-Light", Helvetica;
     cursor: pointer;
-  }
+}
 
 .reservation-list-table input[type="text"] {
     padding: 5px;
     font-family: "Outfit-Light", Helvetica;
 }
 
-.reservation-list-table-form-btn{
+.reservation-list-table-form-btn {
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -119,8 +121,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px); /* Ajoutez ce filtre pour l'effet de flou */
-    z-index: 1000;/* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+    backdrop-filter: blur(5px);
+    /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;
+    /* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
 }
 
 .custom-dialog {
@@ -190,17 +194,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px); /* Ajoutez ce filtre pour l'effet de flou */
-    z-index: 1000;/* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+    backdrop-filter: blur(5px);
+    /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;
+    /* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
 }
-.custom-dialog-edit{
+
+.custom-dialog-edit {
     background: rgba(92, 92, 92, 0.986);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
 }
 
-.form-reserve-room-edit{
+.form-reserve-room-edit {
     background-color: rgb(214, 19, 19);
     color: white;
     border: none;
@@ -209,7 +216,7 @@
     border-radius: 4px;
 }
 
-.form-reserve-room-edit-save{
+.form-reserve-room-edit-save {
     background-color: #4caf50;
     color: white;
     border: none;
@@ -222,14 +229,14 @@
 
 
 /* style for reservation_list_admin */
-.form-singin-div-1-checkbox-admin{
+.form-singin-div-1-checkbox-admin {
     background: transparent;
     margin-top: 20px;
     justify-content: space-around;
     margin-left: 65px;
 }
 
-.form-singin-div-1-checkbox-admin span{
+.form-singin-div-1-checkbox-admin span {
     background: transparent;
     color: #ffffff;
     font-family: "Outfit-SemiBold", Helvetica;
@@ -256,10 +263,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px); /* Ajoutez ce filtre pour l'effet de flou */
-    z-index: 1000;/* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+    backdrop-filter: blur(5px);
+    /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;
+    /* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
 }
-.custom-dialog-view{
+
+.custom-dialog-view {
     background: rgba(92, 92, 92, 0.986);
     padding: 20px;
     border-radius: 8px;
@@ -267,6 +277,38 @@
     max-width: 50%;
 }
 
-.custom-dialog-view >* {
+.custom-dialog-view>* {
     background: transparent;
 }
+
+/* && {
+    .MuiDataGrid-cell {
+        color: white;
+    }
+
+    .MuiDataGrid-columnHeaderTitle {
+        color: white;
+    }
+
+    .MuiTablePagination-displayedRows {
+        color: white;
+    }
+
+    .MuiTablePagination-actions>button>* {
+        color: white;
+    }
+
+    .MuiDataGrid-root {}
+
+    p {
+        color: white
+    }
+
+    .MuiButtonBase-root {
+        color: blue;
+
+        &:disabled {}
+    }
+
+    .MuiSelect-select {}
+} */
