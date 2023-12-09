@@ -1,78 +1,120 @@
-import { Header } from "../../components/header/header";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { BASE_URL } from '../../constants/url';
+import { Header } from '../../components/header/header';
 import ReserveImg from '../../assets/images/reserve_room.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faTrash } from '@fortawesome/free-solid-svg-icons';
-import React, { useEffect, useState } from 'react';
-import './add_room.css'
-import axios from "axios";
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import './add_room.css';
 
-const responsable = ["Randro", "Rakoto"]
-
-export function AddRoom(){
-    return(
-        <div className="add-room">
-            <header>
-            <Header header={false} />
-            </header>
-            <div className="add-room-body">
-                <div className="add-room-txt-img">
-                    <span>Ajoutez et organisez les salles pour offrir une expérience sans pareille.</span>
-                    <img src={ReserveImg} alt="Conference table" />
-                </div>
-                
-                <div className="form-add-room">
-                    <div className="form-add-room-div-1">
-                        <span className="form-add-room-span">Ajouter Salle</span>
-                            <AddRoomForm />
-                    </div>
-                </div>
-            </div>
+export function AddRoom() {
+  return (
+    <div className="add-room">
+      <header>
+        <Header header={false} />
+      </header>
+      <div className="add-room-body">
+        <div className="add-room-txt-img">
+          <span>Ajoutez et organisez les salles pour offrir une expérience sans pareil.</span>
+          <img src={ReserveImg} alt="Conference table" />
         </div>
-    )
+
+        <div className="form-add-room">
+          <div className="form-add-room-div-1">
+            <span className="form-add-room-span">Ajouter Salle</span>
+            <AddRoomForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
+function AddRoomForm() {
+  const [roomData, setRoomData] = useState({
+    location: '',
+    capacity: 0,
+    description: '',
+    images: [],
+    materials: [],
+    responsable_id: '',
+  });
 
-function AddRoomForm() {  
+  const updateMaterial = (index, field, value) => {
+    const updatedMaterials = [...roomData.materials];
+
+    if (!updatedMaterials[index]) {
+      updatedMaterials[index] = {};
+    }
+
+    if (field === 'state') {
+      updatedMaterials[index][field] = value === undefined ? false : value;
+    } else {
+      updatedMaterials[index][field] = value;
+    }
+
+
+    setRoomData({
+      ...roomData,
+      materials: updatedMaterials,
+    });
+  };
+
   const [equipmentCount, setEquipmentCount] = useState(1);
 
   const handleAddEquipment = () => {
-      setEquipmentCount(equipmentCount + 1);
+    setEquipmentCount((prevCount) => prevCount + 1);
+    setRoomData((prevData) => ({
+      ...prevData,
+      materials: [...prevData.materials, {}], // Ajoute un nouveau matériau vide
+    }));
   };
 
   const handleRemoveEquipment = (index) => {
-      setEquipmentCount((prevCount) => Math.max(prevCount - 1, 1));
+    setEquipmentCount((prevCount) => Math.max(prevCount - 1, 1));
+
+    setRoomData((prevData) => {
+      const updatedMaterials = [...prevData.materials];
+      updatedMaterials.splice(index, 1);
+      return { ...prevData, materials: updatedMaterials };
+    });
   };
 
   const renderAdditionalEquipmentFields = () => {
-      const additionalFields = [];
+    return roomData.materials.map((material, index) => (
+      <div key={index} className="form-add-room-info-input-group-4-div">
+        <input
+          type="text"
+          placeholder={`Nom matériel ${index + 1}`}
+          className="form-add-room-info-input-group-4"
+          onChange={(e) => updateMaterial(index, 'name', e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Quantité"
+          className="form-add-room-info-input-group-4"
+          onChange={(e) => updateMaterial(index, 'quantity', parseInt(e.target.value, 10))}
+        />
+        <input
+          type="checkbox"
+          id={`materialStatus${index}`}
+          name={`materialStatus${index}`}
+          className="form-add-room-info-input-group-4"
+          onChange={(e) => updateMaterial(index, 'state', e.target.checked)}
+        />
+        <label htmlFor={`materialStatus${index}`} className="form-add-room-info-input-group-label">Bon état</label>
 
-      for (let i = 2; i <= equipmentCount; i++) {
-          additionalFields.push(
-              <div key={i} className="form-add-room-info-input-group-4-div">
-                  <input type="text" placeholder={`Nom matériel ${i}`} className="form-add-room-info-input-group-4" />
-                  <input type="number" placeholder="Quantité" className="form-add-room-info-input-group-4" />
-
-                  <input type="checkbox" id={`materialStatus${i}`} name={`materialStatus${i}`} className="form-add-room-info-input-group-4" />
-                  <label htmlFor={`materialStatus${i}`} className="form-add-room-info-input-group-label">Bon état</label>
-
-                  <button type="button" className='form-add-room-info-input-group-4-button-delete' onClick={() => handleRemoveEquipment(i)}>
-                    <span> <FontAwesomeIcon icon={faTrash} /> </span>
-                  </button>
-              </div>
-          );
-      }
-
-      return additionalFields;
+        <button
+          type="button"
+          className='form-add-room-info-input-group-4-button-delete'
+          onClick={() => handleRemoveEquipment(index)}
+        >
+          <span> <FontAwesomeIcon icon={faTrash} /> </span>
+        </button>
+      </div>
+    ));
   };
 
-  // formdata addRoom
-    const[roomData, setRoomData] = useState({
-        location: '',
-        capacity: 0,
-        description: '',
-        images: [],
-        user_email: '',
-    })
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -82,194 +124,195 @@ function AddRoomForm() {
     });
   };
 
-
-  const handleImageUpload = (imageFile) => {
-    // Mettez à jour l'état des images dans le formulaire
-    setRoomData({
-      ...roomData,
-      images: [...roomData.images, imageFile],
-    });
+  const handleImageUpload = (imageFiles) => {
+    setRoomData((prevData) => ({
+      ...prevData,
+      images: [...prevData.images, ...imageFiles],
+    }));
   };
 
-  // Request get responsable
-  const [responsable, setResponsable] = useState([])
-  
-  useEffect(() => {
-    // Charger les départements depuis le back-end ici
-    
-    const token = window.localStorage.getItem("access_token");  // Remplacez 'votre-token' par votre token réel
+  const [responsable, setResponsable] = useState([]);
 
-    axios.get('/user/admin/unasigned', {
+  useEffect(() => {
+    const token = window.localStorage.getItem('access_token');
+
+    axios.get(`${BASE_URL}/users/no_room`, {
       headers: {
-        'Authorization': `Bearer ${token}`,
-      }
+        Authorization: `Bearer ${token}`,
+      },
     })
       .then((response) => {
         setResponsable(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching departments:', error.message);
+        console.error('Erreur lors de la récupération des départements :', error.message);
       });
-  }, []); 
+  }, []);
 
   const handleResponsableChange = (event) => {
-    const selectedDepartmentId = parseInt(event.target.value);
+    const selectedDepartmentId = event.target.value;
     setRoomData({
       ...roomData,
-      id_department: selectedDepartmentId,
+      responsable_id: selectedDepartmentId,
     });
   };
 
-
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = window.localStorage.getItem("access_token");
+    const token = window.localStorage.getItem('access_token');
+    console.log(roomData)
+    const formData = new FormData();
 
+    formData.append("responsable_id", '268f5578-b9c0-42d9-aa0e-52515836d0dd');
+    formData.append("capacity", roomData.capacity);
+    formData.append("location", roomData.location);
+    formData.append("description", roomData.description);
+
+    roomData.materials.forEach((material, index) => {
+      formData.append(`material_name`, material.name);
+      formData.append(`material_quantity`, material.quantity);
+      formData.append(`material_state`, material.state);
+    });
+
+    roomData.images.forEach((image, index) => {
+      formData.append('images', image);
+    });
+    
     try {
-      const response = await axios.post('/room/new', roomData, {
+      const response = await axios.post(`${BASE_URL}/room`, formData, {
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${token}`,
         },
       });
 
       if (response.status === 201) {
-        window.location.href = '/RoomList';
-        console.log('User created successfully!');
+        // window.location.href = '/RoomList';
+        console.log('Salle créée avec succès !');
       } else {
-        console.error('Failed to create user:', response.statusText);
+        console.error('Échec de la création de la salle :', response.statusText);
       }
     } catch (error) {
-      console.error('Error:', error.message);
+      console.error('Erreur :', error.message);
     }
   };
 
-    return (
-        <div>
-            <form className="form-add-room-info-div-2" onSubmit={handleSubmit} >
-                <div className="form-add-room-info-div-4">
-                    <div className="form-add-room-info-input-group-1">
-                        <div>
-                            <label htmlFor="situe" className="form-add-room-info-input-group-label">Situé à : </label>
-                            <input
-                            type="text"
-                            id="situe"
-                            name="location"
-                            placeholder='Lieu'
-                            value={roomData.location}
-                            onChange={handleInputChange}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="capacite" className="form-add-room-info-input-group-label">Capacité : </label>
-                            <input 
-                            type="number" 
-                            id="capacite" 
-                            name="capacity" 
-                            placeholder='0'
-                            value={roomData.capacity}
-                            onChange={handleInputChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-add-room-info-input-group-2">
-                        <div>
-                            <label htmlFor="responsable" className="form-add-room-info-input-group-label">Responsable : </label>
-                            <select 
-                            id="responsable" 
-                            name="departement" 
-                            className="form-add-singin-dropdown"
-                            onChange={handleResponsableChange}
-                            >
-                                <option value="" disabled selected>Responsable salle</option>
-                                { responsable.map((resp, index) => 
-                                <option value={index + 1} key={index} >
-                                    {resp.first_name}
-                                </option>) }
-                            </select>
-                        </div>
-                    </div>
-                    <div className="form-add-room-info-input-group-3">
-                        <label htmlFor="description" className="form-add-room-info-input-group-label">Description salle :</label>
-                        <textarea 
-                        id="description" 
-                        name="description" 
-                        rows="5" 
-                        cols="50" 
-                        placeholder="Ajoutez une description..."
-                        value={roomData.description}
-                        onChange={handleInputChange}
-                        ></textarea>
-                    </div>
-                        <label className="form-add-room-info-input-group-label">Images : </label>
-                    <div className="form-add-room-info-input-group-5">
-                        <ImageUploader onImageUpload={handleImageUpload} />
-                        <ImageUploader onImageUpload={handleImageUpload} />
-                    </div>
-                    <div className="form-add-room-info-input-group-4">
-                        <label className="form-add-room-info-input-group-label">Matériels : </label>
-                        <div className="form-add-room-info-input-group-4-div">
-                            <input type="text" placeholder="Nom matériel" className="form-add-room-info-input-group-4" />
-                            <input type="number" placeholder="Quantité" className="form-add-room-info-input-group-4" />
-                          
-                            <input type="checkbox" id="materialStatus" name="materialStatus" className="form-add-room-info-input-group-4" />
-                            <label htmlFor="materialStatus" className="form-add-room-info-input-group-label">Bon état</label>
-                        
-                        </div>
-                        {renderAdditionalEquipmentFields()}
-                        <button type="button" className='form-add-room-info-input-group-4-button-more' onClick={handleAddEquipment}>Ajouter d'autres</button>
-                    </div>
+  return (
+    <div>
+      <form className="form-add-room-info-div-2" onSubmit={handleSubmit} >
+        <div className="form-add-room-info-div-4">
+          <div className="form-add-room-info-input-group-1">
+            <div>
+              <label htmlFor="situe" className="form-add-room-info-input-group-label">Situé à : </label>
+              <input
+                type="text"
+                id="situe"
+                name="location"
+                placeholder="Lieu"
+                value={roomData.location}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="capacite" className="form-add-room-info-input-group-label">Capacité : </label>
+              <input
+                type="number"
+                id="capacite"
+                name="capacity"
+                placeholder="0"
+                value={roomData.capacity}
+                onChange={(e) => setRoomData({ ...roomData, capacity: parseInt(e.target.value) })}
+              />
+            </div>
+          </div>
+          <div className="form-add-room-info-input-group-2">
+            <div>
+              <label htmlFor="responsable" className="form-add-room-info-input-group-label">Responsable : </label>
+              <select
+                id="responsable"
+                name="departement"
+                className="form-add-singin-dropdown"
+                onChange={handleResponsableChange}
+                value={roomData.responsable_id}
+              >
+                <option value="" disabled>Responsable salle</option>
+                {responsable.map((resp) => (
+                  <option key={resp.id} value={resp.id}>
+                    {resp.first_name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="form-add-room-info-input-group-3">
+            <label htmlFor="description" className="form-add-room-info-input-group-label">Description salle :</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              cols="50"
+              placeholder="Ajoutez une description..."
+              value={roomData.description}
+              onChange={handleInputChange}
+            ></textarea>
+          </div>
+          <label className="form-add-room-info-input-group-label">Images : </label>
+          <div className="form-add-room-info-input-group-5">
+            <ImageUploader onImageUpload={handleImageUpload} />
+            <ImageUploader onImageUpload={handleImageUpload} />
+          </div>
+          <div className="form-add-room-info-input-group-4">
+            <label className="form-add-room-info-input-group-label">Matériels : </label>
+            {renderAdditionalEquipmentFields()}
+            <button type="button" className="form-add-room-info-input-group-4-button-more" onClick={handleAddEquipment}>Ajouter d'autres</button>
+          </div>
 
-                    <button className="form-add-room-info-btn">Ajouter salle</button>
-                </div>
-            </form>
+          <button className="form-add-room-info-btn" type="submit">Ajouter salle</button>
         </div>
-    );
+      </form>
+    </div>
+  );
 }
 
 function ImageUploader({ onImageUpload }) {
-    const [selectedImage, setSelectedImage] = useState(null);
-  
-    const handleImageChange = (event) => {
-      const file = event.target.files[0];
-  
-      if (file) {
-        const reader = new FileReader();
-  
-        reader.onloadend = () => {
-          setSelectedImage(reader.result);
-          // Appeler la fonction de rappel avec les données de l'image
-          onImageUpload(file);
-        };
-  
-        reader.readAsDataURL(file);
-      }
-    };
-  
-    return (
-      <div className="form-add-room-info-input-group-5-div">
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-        />
-        {selectedImage && (
-          <div>
-            <img
-              src={selectedImage}
-              className="preview-image"
-              alt="Selected"
-              style={{ width: '180px', height: '100px' }}
-            />
-          </div>
-        )}
-      </div>
-    );
-  }
-  
+  const [selectedImages, setSelectedImages] = useState([]);
+
+  const handleImageChange = (event) => {
+    const files = event.target.files;
+
+    if (files && files.length > 0) {
+      const newImages = Array.from(files).map((file) => ({
+        file,
+        preview: URL.createObjectURL(file),
+      }));
+
+      setSelectedImages((prevImages) => [...prevImages, ...newImages]);
+      onImageUpload(newImages.map((image) => image.file));
+    }
+  };
+
+  return (
+    <div className="form-add-room-info-input-group-5-div">
+      <input
+        type="file"
+        accept="image/*"
+        multiple
+        onChange={handleImageChange}
+      />
+      {selectedImages.map((image, index) => (
+        <div key={index}>
+          <img
+            src={image.preview}
+            className="preview-image"
+            alt={`Selected ${index + 1}`}
+            style={{ width: '180px', height: '100px' }}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 
 
 
