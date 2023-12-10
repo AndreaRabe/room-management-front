@@ -163,7 +163,7 @@ function AddRoomForm() {
     console.log(roomData)
     const formData = new FormData();
 
-    formData.append("responsable_id", '268f5578-b9c0-42d9-aa0e-52515836d0dd');
+    formData.append("responsable_id", roomData.responsable_id);
     formData.append("capacity", roomData.capacity);
     formData.append("location", roomData.location);
     formData.append("description", roomData.description);
@@ -187,8 +187,8 @@ function AddRoomForm() {
       });
 
       if (response.status === 201) {
-        // window.location.href = '/RoomList';
         console.log('Salle créée avec succès !');
+        window.location.href = '/RoomList';
       } else {
         console.error('Échec de la création de la salle :', response.statusText);
       }
@@ -264,7 +264,7 @@ function AddRoomForm() {
           <div className="form-add-room-info-input-group-4">
             <label className="form-add-room-info-input-group-label">Matériels : </label>
             {renderAdditionalEquipmentFields()}
-            <button type="button" className="form-add-room-info-input-group-4-button-more" onClick={handleAddEquipment}>Ajouter d'autres</button>
+            <button type="button" className="form-add-room-info-input-group-4-button-more" onClick={handleAddEquipment}>Ajouter</button>
           </div>
 
           <button className="form-add-room-info-btn" type="submit">Ajouter salle</button>

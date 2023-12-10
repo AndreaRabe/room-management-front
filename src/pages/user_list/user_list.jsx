@@ -3,90 +3,13 @@ import { Footer } from "../../components/footer/footer";
 import { DeleteButton } from "../../components/button/button";
 import LoupeImg from "../../assets/images/loupe.png" 
 import './user_list.css'
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../constants/url";
+import { Box, Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
+import { DataGrid, frFR } from "@mui/x-data-grid";
 
-const users = [
-    {
-      email: "john.doe@example.com",
-      nom: "Doe",
-      prenom: "John",
-      telephone: "123-456-7890",
-      entreprise: "ABC Company",
-      departement: "IT",
-    },
-    {
-      email: "jane.smith@example.com",
-      nom: "Smith",
-      prenom: "Jane",
-      telephone: "987-654-3210",
-      entreprise: "XYZ Corporation",
-      departement: "Marketing",
-    },
-    // Ajoutez d'autres utilisateurs selon vos besoins
-    {
-      email: "user3@example.com",
-      nom: "Doe",
-      prenom: "Jane",
-      telephone: "555-555-5555",
-      entreprise: "123 Corp",
-      departement: "Finance",
-    },
-    {
-      email: "user4@example.com",
-      nom: "Johnson",
-      prenom: "Robert",
-      telephone: "111-222-3333",
-      entreprise: "Tech Solutions",
-      departement: "Engineering",
-    },
-    {
-      email: "user5@example.com",
-      nom: "Brown",
-      prenom: "Anna",
-      telephone: "777-888-9999",
-      entreprise: "Global Innovations",
-      departement: "Research",
-    },
-    {
-      email: "user6@example.com",
-      nom: "White",
-      prenom: "Michael",
-      telephone: "444-333-2222",
-      entreprise: "Data Systems",
-      departement: "Operations",
-    },
-    {
-      email: "user7@example.com",
-      nom: "Green",
-      prenom: "Emily",
-      telephone: "666-777-8888",
-      entreprise: "Creative Designs",
-      departement: "Design",
-    },
-    {
-      email: "user8@example.com",
-      nom: "Black",
-      prenom: "Matthew",
-      telephone: "999-888-7777",
-      entreprise: "Innovative Tech",
-      departement: "Development",
-    },
-    {
-      email: "user9@example.com",
-      nom: "Anderson",
-      prenom: "Olivia",
-      telephone: "123-987-6543",
-      entreprise: "Future Enterprises",
-      departement: "Sales",
-    },
-    {
-      email: "user10@example.com",
-      nom: "Davis",
-      prenom: "William",
-      telephone: "555-444-3333",
-      entreprise: "Digital Solutions",
-      departement: "Customer Support",
-    },
-  ];
+
 
 export function UserList(){
     return(
@@ -98,44 +21,180 @@ export function UserList(){
     )
 }
 
-function UserListTable(){
-    return(
-        <div className="user-list-table">
-            <form action="" className="user-list-table-form">
-              <input type="text" placeholder="Rechercher..."></input>
-              <button><img src={LoupeImg} alt="Loupe" /></button>
-            </form>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Email</th>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Téléphone</th>
-                        <th>Entreprise</th>
-                        <th>Département</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
+function UserListTable() {
+  const [users, setUsers] = useState([])
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
-                    {users.map(item=>
-                        <tr>
-                            <td>{item.email}</td>
-                            <td>{item.nom}</td>
-                            <td>{item.prenom}</td>
-                            <td>{item.telephone}</td>
-                            <td>{item.entreprise}</td>
-                            <td>{item.departement}</td>
-                            <td>
-                              <div>
-                                <DeleteButton />
-                              </div>
-                            </td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
-        </div>
-    )
+  useEffect(() => {
+    const token = window.localStorage.getItem('access_token');
+
+    axios.get(`${BASE_URL}/users`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.error('Erreur lors de la récupération des reservations :', error.message);
+      });
+  }, []);
+
+
+
+  const handleDeleteClick = (user) => {
+    setSelectedUser(user);
+    setDialogOpen(true);
+  };
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
+
+  const handleConfirmDelete = () => {
+    // Call the delete endpoint with the selected user's ID
+
+    const token = window.localStorage.getItem('access_token');
+    axios.delete(`${BASE_URL}/users/${selectedUser.id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(() => {
+        // Refresh the user list after deletion
+        // You may want to handle this more efficiently
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error('Erreur lors de la suppression de l\'utilisateur :', error.message);
+      })
+      .finally(() => {
+        setDialogOpen(false);
+      });
+  };
+
+
+  const columns = [
+    {
+      field: "email",
+      headerName: "Email",
+      flex: 3,
+      editable: false,
+      description: "Email",
+    },
+    {
+      field: "first_name",
+      headerName: "Nom",
+      flex: 1.5,
+      description: "Nom",
+      editable: false,
+    },
+    {
+      field: "last_name",
+      headerName: "Prénom",
+      flex: 2,
+      description: "Prénom",
+      editable: false,
+    },
+    {
+      field: "phone",
+      headerName: "Téléphone",
+      description: "Téléphone",
+      flex: 2,
+    },
+
+    {
+      field: "name",
+      headerName: "Département",
+      description: "Département",
+      flex: 2,
+      editable: false,
+      renderCell: (params) => (
+        <>
+          {params.row.departement.name}
+        </>
+      ),
+    },
+    {
+      field: "company",
+      headerName: "Entreprise",
+      description: "Entreprise",
+      flex: 1.2,
+      editable: false,
+    },
+    {
+      field: "a",
+      headerName: "Action",
+      description: "Action",
+      sortable: false,
+      flex: 1,
+        renderCell: (params) => (
+          <>
+            <DeleteButton onConfirm={() => handleDeleteClick(params.row)} />
+            {/* <Button 
+              variant="contained"
+              color="primary"
+              size="small"
+              // onClick={() => handleChange(params.row)}
+            >
+              <EditIcon />
+            </Button>
+            <Box
+              sx={{
+                width: 10,
+              }}
+            />
+            <Button
+              variant="contained"
+              color="error"
+              size="small"
+              // onClick={() => HandleDelete(params.row)}
+            >
+              <DeleteIcon /> 
+            </Button>         */}
+          </>
+
+        ),
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        width: "90%",
+        margin: "auto",
+        marginBottom: "25px",
+      }}
+    >
+      <DataGrid
+        rows={users}
+        columns={columns}
+        localeText={frFR.components.MuiDataGrid.defaultProps.localeText}
+        pageSize={10}  // Nombre d'éléments par page
+        pagination
+        disableRowSelectionOnClick
+      />
+
+      
+      {/* Delete Confirmation Dialog */}
+      <Dialog open={dialogOpen} onClose={handleDialogClose}>
+        <DialogTitle>Confirmation</DialogTitle>
+        <DialogContent>
+          Êtes-vous sûr de vouloir supprimer cet utilisateur ?
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDialogClose} color="primary">
+            Annuler
+          </Button>
+          <Button onClick={handleConfirmDelete} color="error">
+            Supprimer
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      
+    </Box>
+  );
 }

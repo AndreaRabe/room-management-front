@@ -30,7 +30,7 @@ function SignUpForm() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const response = await axios
+    await axios
       .post(
         `${BASE_URL}/auth/login`,
         {
@@ -46,11 +46,12 @@ function SignUpForm() {
         }
       )
       .then((res) => {
+        console.log(res);
         if (res.status === 200) {
-          console.log(res);
+
           localStorage.setItem("access_token", res.data.access_token);
-          window.location.href = "/";
           console.log("Successfully logged in! Token:");
+          window.location.href = "/";
         } else {
           console.log(res.data.detail);
         }

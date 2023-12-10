@@ -8,7 +8,6 @@ import { BASE_URL } from "../../constants/url";
 
 
 
-const departement = ["Informatique", "Ressources Humaines", "Patrimoine"]
 
 export function SingIn(){
     return(
@@ -52,6 +51,7 @@ function SingInForm(){
 }
 
 function SingInFormClient(){
+
     const [formData, setFormData] = useState({
         email: '',
         last_name: '',
@@ -97,7 +97,8 @@ function SingInFormClient(){
       
       const handleSubmit = async (e) => {
         e.preventDefault();
-        
+      
+
         try {
           const response = await axios.post(`${BASE_URL}/auth/register`, formData, {
             headers: {
@@ -106,8 +107,10 @@ function SingInFormClient(){
           });
     
           if (response.status === 201) {
-            window.location.href = '/singUp';
             console.log('User created successfully!');
+            setTimeout(() => {
+              window.location.href = '/singUp';
+            }, 1000);
           } else {
             console.error('Failed to create user:', response.statusText);
           }
@@ -187,25 +190,25 @@ function SingInFormClient(){
                             onChange={handleInputChange}
                         />
 
-                        <select
-                              id="department"
-                              name="department"
-                              className="formClient-singin-dropdown"
-                              onChange={handleDepartmentChange}
-                              value={formData.departement_id}
-                            >
-                              <option value="" disabled selected>
-                                Votre département
-                              </option>
-                              {departments.map((department, index) => (
-                                <option value={department.id} key={index} >
-                                  {department.name}
+                              <select
+                                id="department"
+                                name="department"
+                                className="formClient-singin-dropdown"
+                                onChange={handleDepartmentChange}
+                                value={formData.departement_id}
+                              >
+                                <option value="" disabled>
+                                  Votre département
                                 </option>
-                              ))}
-                          </select>
+                                {departments.map((department) => (
+                                  <option value={department.id} key={department.id}>
+                                    {department.name}
+                                  </option>
+                                ))}
+                              </select>
                         </div>                        
 
-                        <button type="submit" className="formClient-singin-btn">Creer compte</button>
+                        <button type="submit" className="formClient-singin-btn">Créer compte</button>
                     </div>
                 </form>
         </div>
@@ -268,8 +271,8 @@ function SingInFormAdmin(){
         });
   
         if (response.status === 201) {
-          window.location.href = '/singUp';
           console.log('User created successfully!');
+            window.location.href = '/singUp';
         } else {
           console.error('Failed to create user:', response.statusText);
         }
@@ -364,15 +367,15 @@ function SingInFormAdmin(){
                     onChange={handleDepartmentChange}
                     value={formData.departement_id}
                   >
-                    <option value="" disabled selected>
+                    <option value="" disabled>
                       Votre département
                     </option>
-                    {departments.map((department, index) => (
-                      <option value={department.id} key={index} >
+                    {departments.map((department) => (
+                      <option value={department.id} key={department.id}>
                         {department.name}
                       </option>
                     ))}
-                </select>
+                  </select>
                 </div>
   
                 <button type="submit" className="formClient-singin-btn">

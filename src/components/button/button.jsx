@@ -36,9 +36,9 @@ export function SendEmailButton(){
     )
 }
 
-export function AccountButton() {
+export function AccountButton({onClick}) {
     return(
-        <button className="btn-account" >
+        <button className="btn-account" onClick={onClick} >
             <span className="btn-account-span">Mon compte</span>
         </button>
     )

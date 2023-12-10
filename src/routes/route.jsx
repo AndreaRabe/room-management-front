@@ -32,6 +32,10 @@ const router = createBrowserRouter([
                       element: <PrivateRoute element={<AddRoom />} />
                     },
                     {
+                      path: "/RoomList/:index",
+                      element: <RoomList />,
+                    },
+                    {
                       path: "/RoomList",
                       element: <RoomList />,
                     },
@@ -40,7 +44,7 @@ const router = createBrowserRouter([
                       element: <PrivateRoute element={<UserList />} />
                     },
                     {
-                      path: "/ReserveRoom",
+                      path: "/ReserveRoom/:index",
                       element: <PrivateRoute element={<ReserveRoom />} />
                     },
                     {

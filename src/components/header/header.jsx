@@ -3,6 +3,8 @@ import './header.css';
 import { SingInButton, SingUpButton, AccountButton, LogOut } from '../button/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { decodeToken } from '../../services/jwtDecode';
+import { useState } from 'react';
+import UserInfoDialog from '../../pages/my_account/my_account';
 
 // const navbarInformation = ["Acceuil", "Reserver Salle", ""]
 
@@ -10,6 +12,17 @@ export function Header({header}){
     const navigate = useNavigate()
     const isLogged = localStorage.getItem('access_token')
     const userInformation = decodeToken()
+
+    const [dialogOpen, setDialogOpen] = useState(false);
+
+    const handleOpenDialog = () => {
+      setDialogOpen(true);
+    };
+  
+    const handleCloseDialog = () => {
+      setDialogOpen(false);
+    };
+  
     return(
         <header className='header'>
             <a href="https://omnis.mg/" className='header-a'>
@@ -38,10 +51,12 @@ export function Header({header}){
             </>}
             {(isLogged && header !== "none") &&
             <>
-                <AccountButton />
+                <AccountButton onClick={handleOpenDialog} />
+
                 <LogOut />
             </>}
 
+            {dialogOpen && <UserInfoDialog onClose={handleCloseDialog} />}
             {header === "none" &&
             <>
             </>}

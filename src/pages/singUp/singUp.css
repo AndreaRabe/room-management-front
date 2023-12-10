@@ -119,9 +119,10 @@
 
 .form-singup-btn{
     align-items: center;
-    background: linear-gradient(45deg, rgb(34, 167, 93) 0%, rgb(226, 6, 19) 100%);
+    background: #22a75d;
     border-radius: 12px;
     gap: 10px;
+    box-shadow: 0px 10px 25px #22a75e50;
     justify-content: center;
     padding: 14px 10px;
     width: 300px;
@@ -139,7 +140,7 @@
 }
 
 .form-singup-btn:hover{
-    background: linear-gradient(45deg, rgb(45, 226, 126) 0%,rgb(248, 17, 32) 100%);
+    background: rgb(40, 211, 117);
 }
 
 .form-singup-input-span{

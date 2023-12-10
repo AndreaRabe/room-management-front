@@ -1,5 +1,9 @@
-*{
-  background: #0F1320;
+* > body{
+  background: #132338;
+}
+
+* .disabled {
+  background: unset !important;
 }
 
 body, html {

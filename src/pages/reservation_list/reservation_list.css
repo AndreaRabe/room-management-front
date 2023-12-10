@@ -1,3 +1,13 @@
+
+/* style viewed-row */
+.viewed-row {
+    background-color: lightgray;
+  }
+  
+.unviewed-row {
+background-color: transparent;
+}
+
 /* style user-list-table*/
 .reservation-list-table-form {
     margin-left: -970px;
@@ -234,6 +244,7 @@
     margin-top: 20px;
     justify-content: space-around;
     margin-left: 65px;
+    margin-bottom: 25px;
 }
 
 .form-singin-div-1-checkbox-admin span {

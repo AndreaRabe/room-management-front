@@ -1,11 +1,14 @@
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
 import { Reservation } from "../../components/button/button";
-import { salles_examples } from "../home/home";
 import './room_list.css'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { DeleteButtonRoom, EditButtonRoom } from "../../components/button/button";
 import { decodeToken } from "../../services/jwtDecode";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { BASE_URL, IMG_URL } from "../../constants/url";
 
 export function RoomList(){
     return(
@@ -18,46 +21,80 @@ export function RoomList(){
 }
 
 function ListRoomInformation(){
+    
+    const [roomInformation, setRoomInformation] = useState([]);
     const isLogged = window.localStorage.getItem("access_token")
-    const userInformation = decodeToken()
-    return(
-        <div className="list-room-information">
+  
+    useEffect(() => {
+      const token = window.localStorage.getItem('access_token');
+  
+      axios.get(`${BASE_URL}/room`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          setRoomInformation(response.data);
+        })
+        .catch((error) => {
+          console.error('Erreur lors de la récupération des réservations :', error.message);
+        });
+    }, []);
 
-            {salles_examples.map((item,index)=>
+
+    useEffect(() => {
+        // Scroll to the element with the corresponding room ID on component mount
+        const roomIdFromUrl = window.location.pathname.split('/').pop();
+        if (roomIdFromUrl) {
+          const element = document.getElementById(roomIdFromUrl);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, [roomInformation]); // Add roomInformation as a dependency to trigger the effect when roomInformation changes
+    
+
+    return(
+    <>
+    {roomInformation.map((room,index)=>
+        <div className="list-room-information"key={room.id} id={room.id}>
+
 
             <div className="list-room-information-item">
                 <div className="list-room-information-img">
-                    <img src={item.image} alt="Conference room" />
-                    <img src={item.image_1} alt="Conference room" />
+                    <img src={IMG_URL + room.images[0].link} alt="Conference room" />
+                    <img src={IMG_URL + room.images[0].link} style={{ transform: 'scaleX(-1)' }} alt="Conference room" /> {/* modifie quand tu as deux images */}
                 </div>
                 <div className="list-room-information-table">
-                    <table id="customers">
+                <table id="customers">
+                    <tbody> {/* Ajoutez cette balise tbody */}
                         <tr>
                             <td>Description</td>
-                            <td>{item.description}</td>
+                            <td>{room.description}</td>
                         </tr>
                         <tr>
                             <td>Lieu</td>
-                            <td>Cette salle se situe à {item.lieu}.</td>
+                            <td>Cette salle se situe à {room.location}.</td>
                         </tr>
                         <tr>
                             <td>Capacité</td>
-                            <td>Sa capacité est de {item.capacite} personnes.</td>
+                            <td>Sa capacité est de {room.capacity} personnes.</td>
                         </tr>
                         <tr>
                             <td>Matériels</td>
                             <td>
                                 <ul>
-                                    {item.materiel.map(item=>
-                                        <li>{item.materiel} (nombre : {item.quantité})</li>
-                                        )}
+                                    {room.materials.map((material,index)=>
+                                        <li key={index} >{material.name} (nombre : {material.quantity})</li>
+                                    )}
                                 </ul>
                             </td>
                         </tr>
-                    </table>
+                    </tbody>
+                </table>
                 </div>
                 <div className="list-room-information-btn">
-                    { (isLogged && userInformation.user_status) &&
+                    {/* { (isLogged && userInformation.user_status) &&
                         <>
                         <Link to=''style={{ textDecoration: 'none', background: 'transparent' }} >
                             <DeleteButtonRoom />
@@ -66,13 +103,16 @@ function ListRoomInformation(){
                             <EditButtonRoom />
                     </Link>
                    </>
-                   }
-                   <Link to='/AddRoom'style={{ textDecoration: 'none', background: 'transparent' }} >
+                   } */}
+                   { isLogged &&
+                   <Link to={`/ReserveRoom/${room.id}`} style={{ textDecoration: 'none', background: 'transparent' }} >
                         <Reservation />
                    </Link> 
+                    }
                 </div>
             </div>
-            )}
         </div>
+            )}
+    </>
     )
 }
