@@ -104,7 +104,7 @@ function ListRoomInformation(){
                     </Link>
                    </>
                    } */}
-                   { isLogged &&
+                   { 
                    <Link to={`/ReserveRoom/${room.id}`} style={{ textDecoration: 'none', background: 'transparent' }} >
                         <Reservation />
                    </Link> 

@@ -31,6 +31,10 @@ export function ReserveRoom(){
 
 function ReserveInformation(){
 
+  
+
+
+
   const currentDate = new Date();
   const formattedCurrentDate = currentDate.toISOString().split('T')[0];
 
@@ -58,6 +62,32 @@ function ReserveInformation(){
         console.error('Erreur lors de la récupération des réservations :', error.message);
       });
     }, [index_room]); 
+
+
+    const [reservations, setReservations] = useState([]);
+
+    useEffect(() => {
+      const token = window.localStorage.getItem('access_token');
+  
+      // Récupération de toutes les réservations pour la salle actuelle
+      axios
+        .get(`${BASE_URL}/reservation/list`, {
+          params: {
+            room_id: index_room,
+          },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          setReservations(response.data);
+        })
+        .catch((error) => {
+          console.error('Erreur lors de la récupération des réservations :', error.message);
+        });
+    }, [index_room]);
+
+
         const [formData, setFormData] = useState({
           date: '',
           start_time: new Date().toISOString(),
@@ -81,8 +111,6 @@ function ReserveInformation(){
             [e.target.name]: parseInt(e.target.value),
           });
         };
-
-
 
         
         const handleChangesss = (e) => {
@@ -122,11 +150,44 @@ function ReserveInformation(){
           }
         };
 
-
-
-
+        console.log(reservations)
+       
+      
+        // ... (votre code existant)
+      
+        const isTimeSlotAvailable = () => {
+          const { date, start_time, end_time } = formData;
+      
+          // Convertir les heures de début et de fin en objets Date
+          const startTime = new Date(`2000-01-01 ${start_time}`);
+          const endTime = new Date(`2000-01-01 ${end_time}`);
+      
+          // Filtrer les réservations pour la date sélectionnée
+          const reservationsForDate = reservations.filter((reservation) => reservation.date === date);
+      
+          // Vérifier s'il y a un chevauchement avec une réservation existante
+          const isOverlapping = reservationsForDate.some((reservation) => {
+            const reservationStartTime = new Date(`2000-01-01 ${reservation.start_time}`);
+            const reservationEndTime = new Date(`2000-01-01 ${reservation.end_time}`);
+      
+            return (
+              (startTime >= reservationStartTime && startTime < reservationEndTime) ||
+              (endTime > reservationStartTime && endTime <= reservationEndTime) ||
+              (startTime <= reservationStartTime && endTime >= reservationEndTime)
+            );
+          });
+      
+          return !isOverlapping;
+        };
+      
         const handleSubmit = async (e) => {
           e.preventDefault();
+      
+          // Vérifier la disponibilité avant de soumettre la réservation
+          if (!isTimeSlotAvailable()) {
+            alert('La salle n\'est pas disponible pour cette plage horaire.');
+            return;
+          }
           const token = window.localStorage.getItem('access_token');
           try {
             // Make API call using axios
