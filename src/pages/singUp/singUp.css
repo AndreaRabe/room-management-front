@@ -1,0 +1,186 @@
+.pg-singup *{
+    background-image: url('../../assets/images/medium.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.pg-singup{
+    height: 100%;
+}
+
+/* style pg-singup */
+.pg-singup-body{
+    display: flex;
+    flex-direction: row;
+    padding: 20.5px;
+}
+
+.pg-singup-txt-img{
+    display: flex;
+    flex-direction: column;
+}
+.pg-singup-txt-img span{
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 80px;
+    cursor: default;
+    margin-left: 35px;
+    margin-top: 25px;
+}
+
+.pg-singup-txt-img img{
+    margin-top: 10px;
+    width: 90%;
+    height: auto;
+}
+
+/* style form-singup */
+.form-singup{
+    background: #ffffff0f;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 20px;
+    height: 450px;
+    overflow: hidden;
+    width: 400px;
+    margin-left: 250px;
+}
+
+.form-singup-div-1{
+    background: transparent;
+    margin-top: 70px;
+    margin-left: 45px;
+}
+
+.form-singup-div-2{
+    background: transparent;
+}
+
+.form-singup-div-4{
+    background: transparent;
+    margin-top: 25px;
+}
+
+
+.form-singup-span{
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+    background: transparent;
+    cursor: default;
+}
+
+.form-singup-input{
+    background: transparent;
+    outline: none;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 37px;
+    width: 300px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.form-singup-input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.form-singup-input:focus::placeholder {
+    opacity: 0;
+}
+
+.form-singup-btn{
+    align-items: center;
+    background: #22a75d;
+    border-radius: 12px;
+    gap: 10px;
+    box-shadow: 0px 10px 25px #22a75e50;
+    justify-content: center;
+    padding: 14px 10px;
+    width: 300px;
+    border: none;
+    color: #ffffff;
+    margin-left: 3.27px;
+    cursor: pointer;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+}
+
+.form-singup-btn:hover{
+    background: rgb(40, 211, 117);
+}
+
+.form-singup-input-span{
+    color: #ffffff;
+    font-family: "Outfit-Medium", Helvetica;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    background: transparent;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    margin-left: 180px;
+    cursor: pointer;
+}
+
+.form-singup-input-span:hover{
+    color: #22a75d;
+}
+
+.form-singup-div-3{
+    background: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Medium", Helvetica;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 20px;
+    margin-left: 12px;
+    cursor: default;
+}
+
+.form-singup-div-3-b{
+    background: transparent;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.form-singup-div-3-b:hover{
+    color: #22a75d;
+}

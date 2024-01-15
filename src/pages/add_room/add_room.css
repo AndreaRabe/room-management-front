@@ -1,0 +1,429 @@
+.add-room *{
+    background-image: url('../../assets/images/medium.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+/* style reserve-room */
+.add-room{
+    height: 90%;
+    width: auto;
+}
+
+.add-room-body{
+    display: flex;
+    flex-direction: row;
+    padding: 20.5px;
+}
+
+.add-room-txt-img{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+.add-room-txt-img span{
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 80px;
+    cursor: default;
+    margin-left: 35px;
+    margin-top: -15px;
+}
+
+.add-room-txt-img img{
+    margin-top: 10px;
+    width: 80%;
+    height: auto;
+}
+
+/* style form-reserve-room */
+.form-add-room{
+    background: #ffffff0f;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 20px;
+    height: fit-content;
+    overflow: hidden;
+    width: 600px;
+    margin-left: 100px;
+}
+
+.form-add-room-div-1{
+    background: transparent;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-add-room-span{
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+    background: transparent;
+    cursor: default;
+    margin-left: -275px;
+}
+
+/* style form-add-room-info */
+.form-add-room-info-div-2{
+    background: #ffffff0f;
+}
+
+.form-add-room-info-div-4{
+    background: transparent;
+    margin-top: 25px;
+}
+
+.form-add-room-info-input-group-label{
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    background: transparent;
+}
+
+/* style form-reserve-room-info-input-group-1 */
+.form-add-room-info-input-group-1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    background: transparent;
+}
+
+.form-add-room-info-input-group-1 div{
+    background: transparent;
+}
+
+.form-add-room-info-input-group-1 div:first-child{
+    margin-left: 10px;
+}
+
+.form-add-room-info-input-group-1 div:last-child{
+    margin-left: 90px;
+}
+
+.form-add-room-info-input-group-1 div:first-child input{
+    width: 170px;
+}
+
+.form-add-room-info-input-group-1 div:last-child input{
+    width: 50px;
+}
+
+.form-add-room-info-input-group-1 input{
+    background: transparent;
+    outline: none;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 34px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.form-add-room-info-input-group-1 input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.form-add-room-info-input-group-1 input:focus::placeholder {
+    opacity: 0;
+}
+
+/* style form-add-singin-dropdown  */
+
+
+.form-add-singin-dropdown{
+    background: transparent;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 37px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #000000;
+    }
+}
+
+.form-add-room-info-input-group-2{
+    background: transparent;
+}
+
+
+.form-add-room-info-input-group-2 div{
+    background: transparent;
+}
+
+/* style form-add-room-info-input-group-3 */
+.form-add-room-info-input-group-3{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.form-add-room-info-input-group-3 textarea{
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+    resize: vertical;
+    margin-top: 10px;
+    background: transparent;
+    outline: none;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    border-style: ridge ;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.form-add-room-info-input-group-3 textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.form-add-room-info-input-group-3 textarea:focus::placeholder {
+    opacity: 0;
+}
+
+/* style form-add-room-info-input-group-4 */
+.form-add-room-info-input-group-4{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.form-add-room-info-input-group-4-div{
+    display: flex;
+    flex-direction: row;
+    background: transparent;   
+}
+
+.form-add-room-info-input-group-4-div input{
+    background: transparent;
+    outline: none;
+    border-color: #ffff;
+    border-width: 0.5px;
+    border-style: ridge ;
+    border-radius: 9px;
+    height: 34px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 25px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.form-add-room-info-input-group-4-div input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.form-add-room-info-input-group-4-div input:focus::placeholder {
+    opacity: 0;
+}
+
+.form-add-room-info-input-group-4-div input:first-child{
+    width: 150px;
+    margin-left: 50px;
+}
+
+.form-add-room-info-input-group-4-div input:nth-child(2){
+    width: 100px;
+    margin-left: 20px;
+}
+
+.form-add-room-info-input-group-4-div div{
+    margin-left: -80px;
+}
+
+.form-add-room-info-input-group-4-div input:nth-child(3){
+    width: 25px;
+    margin-top: 12px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.form-add-room-info-input-group-4-div label{
+    margin-top: 22px;
+}
+
+.form-add-room-info-input-group-4-button-more{
+    height: 30px;
+    width: 100px;
+    margin-left: 50px;
+    margin-top: 10px;
+    background: #2278D4;
+    border: #2278D4;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Outfit-SemiBold", Helvetica;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.form-add-room-info-input-group-4-button-more:hover{
+    background: #479af1;
+}
+
+.form-add-room-info-input-group-4-button-delete{
+    height: 30px;
+    width: 40px;
+    background: #e20615d3;
+    border: #e20615d3;
+    position: relative;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.form-add-room-info-input-group-4-button-delete span{
+    background: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.form-add-room-info-input-group-4-button-delete:hover{
+    background: #ff0112;
+}
+
+/* style form-add-room-info-input-group-5 */ 
+.form-add-room-info-input-group-5{
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-add-room-info-input-group-5 > * {
+    margin: 10px; /* Ajoutez la marge de 100px autour de chaque enfant du div */
+  }
+
+.form-add-room-info-input-group-5-div{
+    background: transparent;
+}
+
+.form-add-room-info-input-group-5-div div{
+    background: transparent;
+}
+
+.form-add-room-info-input-group-5-div input{
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+}
+
+
+.form-add-room-info-input-group-5-div div img{
+    background: transparent;
+    margin-top: 10px;
+}
+
+
+
+/* style form-add-room-info-btn */
+.form-add-room-info-btn{
+    align-items: center;
+    background: #22a75d;
+    box-shadow: 0px 10px 25px #22a75e50;
+    border-radius: 12px;
+    gap: 10px;
+    justify-content: center;
+    padding: 14px 10px;
+    width: 300px;
+    border: none;
+    color: #ffffff;
+    margin-left: 6px;
+    cursor: pointer;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 20px;
+    position: relative;
+}
+
+.form-add-room-info-btn:hover{
+    background: rgb(40, 211, 117);
+}

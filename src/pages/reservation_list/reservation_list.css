@@ -1,0 +1,325 @@
+
+/* style viewed-row */
+.viewed-row {
+    background-color: lightgray;
+  }
+  
+.unviewed-row {
+background-color: transparent;
+}
+
+/* style user-list-table*/
+.reservation-list-table-form {
+    margin-left: -970px;
+}
+
+.reservation-list-table input {
+    background: #ffffff0f;
+    ;
+    outline: none;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    border-style: ridge;
+    border-radius: 9px;
+    height: 20px;
+    width: 220px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Outfit-Regular", Helvetica;
+    margin-bottom: 20px;
+    text-indent: 10px;
+    color: #ffff;
+
+    &:focus {
+        color: #ffff;
+    }
+}
+
+.reservation-list-table input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    transition: opacity ease;
+}
+
+.reservation-list-table input:focus::placeholder {
+    opacity: 0;
+}
+
+.reservation-list-table-form button {
+    cursor: pointer;
+    background: transparent;
+    background: none;
+    border: none;
+    margin-left: -30px;
+    /* Ajusté la marge pour chevaucher légèrement l'image */
+}
+
+.reservation-list-table-form img {
+    background: transparent;
+    height: 15px;
+}
+
+
+/* style user-list-table */
+.reservation-list-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.reservation-list-table table {
+    border-collapse: collapse;
+    width: 90%;
+    box-shadow: 0 4px 8px #ffffff28;
+    color: #ffffffd4;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.reservation-list-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.reservation-list-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.reservation-list-table-view td {
+    background-color: #ffffff28 !important;
+}
+
+.reservation-list-table th {
+    background-color: #22a75e52;
+    font-family: "Outfit-Light", Helvetica;
+    cursor: pointer;
+}
+
+.reservation-list-table input[type="text"] {
+    padding: 5px;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.reservation-list-table-form-btn {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+/* style delete button */
+.no-scroll {
+    overflow: hidden;
+}
+
+.custom-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.466);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;
+    /* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+}
+
+.custom-dialog {
+    background: rgba(92, 92, 92, 0.986);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+}
+
+.dialog-title {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    cursor: default;
+    background: transparent;
+}
+
+.dialog-content {
+    margin: 0 0 20px;
+    color: #ffffffa2;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    cursor: default;
+    background: transparent;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    background: transparent;
+}
+
+.dialog-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+.open-dialog-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+/* style delete button */
+.custom-dialog-overlay-edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.466);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;
+    /* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+}
+
+.custom-dialog-edit {
+    background: rgba(92, 92, 92, 0.986);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+}
+
+.form-reserve-room-edit {
+    background-color: rgb(214, 19, 19);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.form-reserve-room-edit-save {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+
+
+/* style for reservation_list_admin */
+.form-singin-div-1-checkbox-admin {
+    background: transparent;
+    margin-top: 20px;
+    justify-content: space-around;
+    margin-left: 65px;
+    margin-bottom: 25px;
+}
+
+.form-singin-div-1-checkbox-admin span {
+    background: transparent;
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+
+/* style reservation-view */
+.custom-dialog-overlay-view {
+    color: #ffffff;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.466);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    /* Ajoutez ce filtre pour l'effet de flou */
+    z-index: 1000;
+    /* Valeur arbitraire, assurez-vous qu'elle est plus grande que le z-index du footer */
+}
+
+.custom-dialog-view {
+    background: rgba(92, 92, 92, 0.986);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+    max-width: 50%;
+}
+
+.custom-dialog-view>* {
+    background: transparent;
+}
+
+/* && {
+    .MuiDataGrid-cell {
+        color: white;
+    }
+
+    .MuiDataGrid-columnHeaderTitle {
+        color: white;
+    }
+
+    .MuiTablePagination-displayedRows {
+        color: white;
+    }
+
+    .MuiTablePagination-actions>button>* {
+        color: white;
+    }
+
+    .MuiDataGrid-root {}
+
+    p {
+        color: white
+    }
+
+    .MuiButtonBase-root {
+        color: blue;
+
+        &:disabled {}
+    }
+
+    .MuiSelect-select {}
+} */

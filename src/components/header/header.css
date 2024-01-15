@@ -1,0 +1,38 @@
+/* style header*/ 
+.header{
+    margin: 10px;
+    display: flex;
+}
+
+.header-img{
+    left: 0;
+    margin-left: 20px;
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+}
+
+.header-item {
+    display: inline;
+    margin-top: 25px;
+    margin-left: 50px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+  
+  /* Add a rule to remove the margin from the last element */
+.header-item:last-child {
+    margin-right: 0;
+}
+
+.header-item:hover{
+    color: #22a75d;
+}

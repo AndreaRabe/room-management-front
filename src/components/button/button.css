@@ -1,0 +1,411 @@
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+    background: transparent;
+}
+
+/* style sing-in button*/ 
+.btn-singIn{
+    margin-top: 10px;
+    margin-right: 20px;
+    height: 40px;
+    width: 120px;
+    background-color: #22a75d;
+    border: #22a75d;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #22a75e50;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.btn-singIn-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-singIn:hover{
+    background: rgb(40, 211, 117);
+}
+
+/* style sing-up button*/ 
+.btn-singUp{
+    margin-top: 10px;
+    margin-right: 160px;
+    height: 40px;
+    width: 130px;
+    background-color: #22a75e52;
+    border: #22a75e52;
+    border-radius: 52px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+
+.btn-singUp-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-singUp:hover{
+    background: #22a75e94;
+}
+
+/* style webSite Button */
+.btn-webSite{
+    height: 40px;
+    width: 120px;
+    background-color: #22a75d;
+    border: #22a75d;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #22a75e50;
+    position: relative;
+    right: 0;
+    cursor: pointer;
+  }
+
+.btn-webSite-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-webSite:hover{
+    background: rgb(40, 211, 117);
+}
+
+/*style sendEmail button*/
+.btn-SendEmail{
+    height: 40px;
+    width: 197px;
+    background-color: #000000b5;
+    border: #000000b5;
+    box-shadow: 0px 10px 25px #000000b5;
+    border-radius: 52px;
+    cursor: pointer;
+    left: 920px;
+    position: absolute;
+    top: 180px;
+  }
+
+.btn-SendEmail-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-SendEmail:hover{
+    background: rgba(27, 26, 26, 0.979);
+}
+
+
+/* style acount button*/ 
+.btn-account{
+    margin-top: 10px;
+    margin-right: 100px;
+    height: 40px;
+    width: 130px;
+    background: #22a75e52!important;
+    border: #22a75e52;
+    border-radius: 52px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.btn-account-span{
+    background: transparent!important;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-account:hover{
+    background: #22a75eab!important;
+}
+
+/* style logOut button */
+.btn-logout img{
+    right: 0;
+    margin-right: 40px;
+    position: absolute;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+
+/* style seeMore-in button*/ 
+.btn-seeMore{
+    height: 40px;
+    width: 120px;
+    background-color: #22a75d;
+    border: #22a75d;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #22a75e50;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-seeMore-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-seeMore:hover{
+    background: rgb(40, 211, 117);
+}
+
+/* style reservation-in button*/ 
+.btn-reservation{
+    height: 40px;
+    width: 120px;
+    background-color: #22a75d;
+    border: #22a75d;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #22a75e50;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-reservation-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-reservation:hover{
+    background: rgb(40, 211, 117);
+}
+
+/* style delete-in button*/ 
+.btn-delete{
+    height: 30px;
+    width: 40px;
+    margin-right: -35px;
+    background: #e20615d3;
+    border: #e20615d3;
+    box-shadow: 0px 10px 25px #e2061534;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-delete-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-delete:hover{
+    background: #ff0112;
+}
+
+/* styly btn-edit */
+.btn-edit{
+    height: 30px;
+    width: 40px;
+    margin-right: -35px;
+    background-color: #2278D4;
+    border: #2278D4;
+    box-shadow: 0px 10px 25px #2278d436;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-edit-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-edit:hover{
+    background: #479af1;
+}
+
+/* style btn-view */
+.btn-view{
+    height: 30px;
+    width: 40px;
+    margin-right: -35px;
+    background-color: #22A75D;
+    border: #22A75D;
+    box-shadow: 0px 10px 25px #22a75e50;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-view-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-view:hover{
+    background: rgb(40, 211, 117);
+}
+
+/* style btn-delete-room */
+.btn-delete-room{
+    height: 40px;
+    width: 120px;
+    background: #e20615d3;
+    border: #e20615d3;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #e2061534;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-delete-room-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-delete-room:hover{
+    background: #ff0112;
+}
+
+
+/* style btn-edit-room */
+.btn-edit-room{
+    height: 40px;
+    width: 120px;
+    background-color: #2278D4;
+    border: #2278D4;
+    border-radius: 52px;
+    box-shadow: 0px 10px 25px #2278d436;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-edit-room-span{
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Outfit-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.btn-edit-room:hover{
+    background: #479af1;
+}

@@ -1,0 +1,98 @@
+.room-list{
+
+}
+
+/* style list-room-information */
+.list-room-information{
+    margin-top: 10px;
+    height: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.list-room-information-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 80%;
+    padding: 20px;
+    background: #ffffff0f;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.list-room-information-img{
+    background: transparent;
+}
+
+.list-room-information-img img{
+    width: 450px;
+    height: 300px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.list-room-information-img img:first-child{
+    margin-right: 30px;
+}
+
+.list-room-information-table{
+    background: transparent;
+    width: 100%;
+}
+
+.list-room-information-table table{
+    margin-left: 45px;
+    margin-right: 45px;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px #ffffff28;
+    color: #ffffffd4;
+    font-family: "Outfit-Light", Helvetica;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 30px;
+    cursor: default;
+
+}
+
+.list-room-information-table #customers {
+    font-family: "Outfit-Light", Helvetica;
+    border-collapse: collapse;
+    width: 90%;
+    background: transparent;
+  }
+  
+.list-room-information-table #customers td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    background: transparent;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.list-room-information-table #customers tr, .list-room-information-table #customers ul, .list-room-information-table #customers li{
+    background: transparent;
+    font-family: "Outfit-Light", Helvetica;
+}
+
+.list-room-information-btn {
+    display: flex;
+    justify-content: flex-end;  /* Align buttons to the right */
+    margin-top: 10px;
+    background: transparent;
+    width:990px;
+}
+
+.list-room-information-btn > * {
+    margin-right: 10px;
+    background: transparent;
+}
