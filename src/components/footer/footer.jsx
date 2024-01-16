@@ -4,7 +4,9 @@ import { SendEmailButton } from "../button/button"
 import facebook_icon from "../../assets/images/facebook.png"
 import linkedin_icon from "../../assets/images/linkedin.png"
 import twitter_icon from "../../assets/images/twitter.png"
+import { useState } from "react"
 export function Footer() {
+    const [Object, setObject] = useState("")
     return(
         <footer className="footer">
             <div className="about">
@@ -17,7 +19,7 @@ export function Footer() {
             <div className="website">
                 <span className="website-span">Site Web</span>
                 <div className="website-div">
-                        Découvrez davantage sur l'OMNIS. Cliquez pour explorer notre site web.
+                    Découvrez davantage sur l'OMNIS. Cliquez pour explorer notre site web.
                 </div>
                 <a href="https://omnis.mg/" className="website-a">
                         <WebSiteButton />
@@ -26,8 +28,10 @@ export function Footer() {
             <div className="media">
                 <span className="media-span">Réseaux Sociaux</span>
                 <div className="email">
-                    <input type="text" placeholder="Votre e-mail ..." className="email-input"/>
-                    <SendEmailButton />
+                    <input type="text" placeholder="Votre objet ..." className="email-input" value={Object} onChange={(e)=> setObject(e.target.value)}/>
+                    <a href={`mailto:communication@omnis.mg?subject=${Object}`}>
+                        <SendEmailButton />
+                    </a>
                 </div>
                 <div className="social-media">
                     <a href="https://www.facebook.com/OmnisMadagascar/" className="social-media-facebook">
@@ -44,7 +48,7 @@ export function Footer() {
                     </a>
                 </div>
             </div>
-            <span className="copyright">© Copyright OMNIS 2023</span>
+            <span className="copyright">© Copyright OMNIS 2024</span>
         </footer>
     )
 }

@@ -63,11 +63,11 @@ function ListRoomInformation(){
             <div className="list-room-information-item">
                 <div className="list-room-information-img">
                     <img src={IMG_URL + room.images[0].link} alt="Conference room" />
-                    <img src={IMG_URL + room.images[0].link} style={{ transform: 'scaleX(-1)' }} alt="Conference room" /> {/* modifie quand tu as deux images */}
+                    <img src={IMG_URL + room.images[1].link} style={{ transform: 'scaleX(-1)' }} alt="Conference room" /> {/* modifie quand tu as deux images */}
                 </div>
                 <div className="list-room-information-table">
                 <table id="customers">
-                    <tbody> {/* Ajoutez cette balise tbody */}
+                    <tbody>
                         <tr>
                             <td>Description</td>
                             <td>{room.description}</td>

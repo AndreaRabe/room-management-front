@@ -20,11 +20,11 @@ const router = createBrowserRouter([
                     
                     },
                     {
-                      path: "/singIn",
+                      path: "/singUp",
                       element: <SingIn />,
                     },
                     {
-                      path: "/singUp",
+                      path: "/singIn",
                       element: <SingUp />,
                     },
                     {

@@ -3,10 +3,11 @@ import './header.css';
 import { SingInButton, SingUpButton, AccountButton, LogOut } from '../button/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { decodeToken } from '../../services/jwtDecode';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import UserInfoDialog from '../../pages/my_account/my_account';
+import axios from 'axios';
+import { BASE_URL } from '../../constants/url';
 
-// const navbarInformation = ["Acceuil", "Reserver Salle", ""]
 
 export function Header({header}){
     const navigate = useNavigate()
@@ -22,6 +23,30 @@ export function Header({header}){
     const handleCloseDialog = () => {
       setDialogOpen(false);
     };
+
+
+    // list of admin no room
+
+    const [responsable, setResponsable] = useState([]);
+
+    useEffect(() => {
+      const token = window.localStorage.getItem('access_token');
+  
+      axios.get(`${BASE_URL}/users/no_room`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          setResponsable(response.data);
+        })
+        .catch((error) => {
+          console.error('Erreur lors de la récupération des départements :', error.message);
+        });
+    }, []);
+
+
+
   
     return(
         <header className='header'>
@@ -37,7 +62,9 @@ export function Header({header}){
 
             {(isLogged && userInformation.user_status)&&
                 <>
-                    <span className='header-item' onClick={() => navigate('/AddRoom')} >Ajouter Salle</span>
+                    { (userInformation.user_name === (responsable.firstname + responsable.lastname)) &&  // need to be verify if work          
+                        <span className='header-item' onClick={() => navigate('/AddRoom')} >Ajouter Salle</span> 
+                    }
                     <span className='header-item' onClick={() => navigate('/ReservationListAdmin')} >Liste des réservations</span>    
                     <span className='header-item' onClick={() => navigate('/UserList')} >Liste des utilisateurs</span>    
                 </>
@@ -46,8 +73,8 @@ export function Header({header}){
 
             {(!isLogged && header !== "none")&&
             <>
-                <Link to="/singIn"> <SingInButton /> </Link>
-                <Link to="/singUp"> <SingUpButton /> </Link>
+                <Link to="/singUp"> <SingInButton /> </Link>
+                <Link to="/singIn"> <SingUpButton /> </Link>
             </>}
             {(isLogged && header !== "none") &&
             <>
