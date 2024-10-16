@@ -43,7 +43,7 @@ function SingInForm(){
                 </div>
                 {!isAdmin ? <SingInFormClient /> : <SingInFormAdmin/>}
                 <div className="form-singin-div-3">
-                    Vous avez déjà un compte ?<b className="form-singin-div-3-b" onClick={() => navigate('/singUp')}>Se connecter</b>
+                    Vous avez déjà un compte ?<b className="form-singin-div-3-b" onClick={() => navigate('/singIn')}>Se connecter</b>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@ function SingInFormClient(){
           if (response.status === 201) {
             console.log('User created successfully!');
             setTimeout(() => {
-              window.location.href = '/singUp';
+              window.location.href = '/singIn';
             }, 1000);
           } else {
             console.error('Failed to create user:', response.statusText);
@@ -272,7 +272,7 @@ function SingInFormAdmin(){
   
         if (response.status === 201) {
           console.log('User created successfully!');
-            window.location.href = '/singUp';
+            window.location.href = '/singIn';
         } else {
           console.error('Failed to create user:', response.statusText);
         }

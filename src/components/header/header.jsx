@@ -44,9 +44,6 @@ export function Header({header}){
           console.error('Erreur lors de la récupération des départements :', error.message);
         });
     }, []);
-
-
-
   
     return(
         <header className='header'>
@@ -62,7 +59,7 @@ export function Header({header}){
 
             {(isLogged && userInformation.user_status)&&
                 <>
-                    { (userInformation.user_name === (responsable.firstname + responsable.lastname)) &&  // need to be verify if work          
+                    { (userInformation.id === responsable.map(e => e.id)) &&  // need to be verify if work          
                         <span className='header-item' onClick={() => navigate('/AddRoom')} >Ajouter Salle</span> 
                     }
                     <span className='header-item' onClick={() => navigate('/ReservationListAdmin')} >Liste des réservations</span>    

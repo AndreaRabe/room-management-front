@@ -28,6 +28,10 @@ function SignUpForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+
+
   const handleLogin = async (e) => {
     e.preventDefault();
     await axios
@@ -41,7 +45,7 @@ function SignUpForm() {
         },
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded", // Adjust content type if needed
+            "Content-Type": "application/x-www-form-urlencoded",
           },
         }
       )
@@ -91,7 +95,7 @@ function SignUpForm() {
           Vous n'avez pas de compte ?
           <b
             className="form-singup-div-3-b"
-            onClick={() => navigate("/singIn")}
+            onClick={() => navigate("/singUp")}
           >
             Créer un compte
           </b>
