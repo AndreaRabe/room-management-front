@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Room Management - Conference Room Booking System**  
 
-## Available Scripts
+A front-end application built with React to manage and book conference rooms efficiently.  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## **Table of Contents**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. [Overview](#overview)  
+2. [Features](#features)  
+3. [Technologies Used](#technologies-used)  
+4. [Installation](#installation)  
+5. [Usage](#usage)  
+8. [Contact](#contact)  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## **Overview**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Room Management is a user-friendly system for organizing conference room bookings. With an intuitive interface, users can view available rooms, book slots, and manage reservations seamlessly.  
 
-### `npm run build`
+Use case: Ideal for companies or organizations looking to optimize their workspace management.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **Features**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- View available rooms and their details (capacity, equipment, etc.).  
+- Book conference rooms for specific time slots.  
+- Edit or cancel existing reservations.  
+- Responsive design for desktop and mobile.  
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **Technologies Used**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React**: Front-end framework for building the application.  
+- **React Router**: For managing application routing.  
+- **CSS (or Tailwind CSS)**: For styling the interface.  
+- **Axios**: For API calls (if the app communicates with a backend).  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **Installation**
 
-## Learn More
+### Prerequisites  
+- [Node.js](https://nodejs.org/) (version 18.20.1 or later).  
+- A package manager like npm or pnpm.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Steps  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/yourusername/Room-Management.git
+   ```  
 
-### Code Splitting
+2. Navigate to the project directory:  
+   ```bash
+   cd Room-Management
+   ```  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Install the dependencies:  
+   ```bash
+   npm install
+   ```  
 
-### Analyzing the Bundle Size
+4. Start the development server:  
+   ```bash
+   npm start
+   ```  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. Open the app in your browser at `http://localhost:3000`.  
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## **Usage**
 
-### Advanced Configuration
+1. Navigate to the room booking page.  
+2. Select a room and a time slot.  
+3. Confirm the booking.  
+4. Manage reservations from the dashboard.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## **Contact**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Author**: Andrea Rabe  
+- **Email**: [nantenainaandrea2@gmail.com](mailto:nantenainaandrea2@gmail.com)  
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
